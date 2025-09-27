@@ -1,0 +1,14 @@
+<header class="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm z-50">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="{{ '/' | relative_url }}" class="text-xl font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition">{{ site.author }}</a>
+    <nav class="space-x-6">
+      <a href="{{ '/' | relative_url }}" class="hover:text-blue-500">Home</a>
+      <a href="{{ '/research' | relative_url }}" class="hover:text-blue-500">Research</a>
+      <a href="{{ '/teaching' | relative_url }}" class="hover:text-blue-500">Teaching</a>
+      <a href="{{ '/blog' | relative_url }}" class="hover:text-blue-500">Blog</a>
+      <a href="{{ '/hobbies' | relative_url }}" class="hover:text-blue-500">Hobbies</a>
+      <a href="{{ '/links' | relative_url }}" class="hover:text-blue-500">Links</a>
+      <button id="theme-toggle" class="ml-4 text-sm border rounded px-2 py-1 dark:border-gray-600">🌓</button>
+    </nav>
+  </div>
+</header>

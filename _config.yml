@@ -1,0 +1,7 @@
+title: "Mk personal webpage"
+author: "Kudzaishe Mwaza"
+baseurl: ""
+url: ""
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
