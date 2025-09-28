@@ -8,242 +8,121 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       background-color: #f5f5f5;
     }
-    .loading {
-      text-align: center;
-      padding: 50px;
-      color: #666;
-    }
-    .error {
-      color: #d32f2f;
-      background: #ffebee;
-      padding: 20px;
-      border-radius: 4px;
-      margin: 20px;
-    }
-    .success {
-      color: #2e7d32;
-      background: #e8f5e8;
-      padding: 20px;
-      border-radius: 4px;
-      margin: 20px;
+    #nc-root {
+      min-height: 100vh;
     }
   </style>
 </head>
 <body>
-  <div class="loading" id="loading">
-    <h2>Loading Content Manager...</h2>
-    <p>Please wait while the CMS initializes.</p>
-    <p id="status">Checking for CMS library...</p>
-  </div>
+  <!-- This div will be replaced by the CMS -->
+  <div id="nc-root"></div>
 
-  <div class="error" id="error" style="display: none;">
-    <h2>Error Loading CMS</h2>
-    <p id="error-message"></p>
-    <p><strong>Troubleshooting:</strong></p>
-    <ul>
-      <li>Check your internet connection</li>
-      <li>Try refreshing the page</li>
-      <li>Check browser console for more details</li>
-    </ul>
-  </div>
-
-  <div class="success" id="success" style="display: none;">
-    <h2>CMS Loaded Successfully!</h2>
-    <p>The content management system is now ready to use.</p>
-  </div>
-
-  <!-- Load Decap CMS from multiple CDN sources for reliability -->
+  <!-- Load Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
   <script>
-    let cmsLoaded = false;
-    let attempts = 0;
-    const maxAttempts = 3;
+    console.log('Initializing CMS with GitHub authentication...');
     
-    function updateStatus(message) {
-      const statusEl = document.getElementById('status');
-      if (statusEl) {
-        statusEl.textContent = message;
-      }
-      console.log('Status:', message);
-    }
-    
-    function loadCMS() {
-      attempts++;
-      updateStatus(`Loading CMS (attempt ${attempts}/${maxAttempts})...`);
-      
-      // Try different CDN sources
-      const cdnSources = [
-        'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js',
-        'https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js',
-        'https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js'
-      ];
-      
-      const currentSource = cdnSources[(attempts - 1) % cdnSources.length];
-      console.log('Trying CDN source:', currentSource);
-      
-      const script = document.createElement('script');
-      script.src = currentSource;
-      script.onload = function() {
-        console.log('Script loaded from:', currentSource);
-        checkForCMS();
-      };
-      script.onerror = function() {
-        console.error('Failed to load script from:', currentSource);
-        if (attempts < maxAttempts) {
-          setTimeout(loadCMS, 1000);
-        } else {
-          showError('Failed to load Decap CMS from all CDN sources. Please check your internet connection.');
-        }
-      };
-      
-      document.head.appendChild(script);
-    }
-    
-    function checkForCMS() {
-      updateStatus('Checking for CMS object...');
-      
-      if (typeof CMS !== 'undefined') {
-        console.log('CMS found!', CMS);
-        updateStatus('CMS found, initializing...');
-        initializeCMS();
-      } else {
-        console.log('CMS not found, waiting...');
-        setTimeout(function() {
-          if (typeof CMS !== 'undefined') {
-            checkForCMS();
-          } else if (attempts < maxAttempts) {
-            loadCMS();
-          } else {
-            showError('CMS object not found after loading script. This may be a version compatibility issue.');
-          }
-        }, 1000);
-      }
-    }
-    
-    function initializeCMS() {
-      try {
-        updateStatus('Initializing CMS configuration...');
-        
-        CMS.init({
-          config: {
-            backend: {
-              name: 'github',
-              repo: 'mwazakd/mwazakd.github.io',
-              branch: 'main',
-            },
-            media_folder: 'assets/uploads',
-            public_folder: '/assets/uploads',
-            site_url: 'https://mwazakd.github.io',
-            logo_url: '/assets/images/profile.jpg',
-            collections: [
+    // Initialize CMS with GitHub OAuth configuration
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'mwazakd/mwazakd.github.io',
+          branch: 'main',
+          base_url: 'https://api.netlify.com',
+          auth_endpoint: 'auth',
+          client_id: 'Ov23liu2ilyXCHE9mSqe',
+          client_secret: 'b0bea250856733bf76d99ac60e4355c9794d707a'
+        },
+        media_folder: 'assets/uploads',
+        public_folder: '/assets/uploads',
+        site_url: 'https://mwazakd.github.io',
+        logo_url: '/assets/images/profile.jpg',
+        collections: [
+          {
+            name: 'blog',
+            label: 'Blog Posts',
+            folder: '_posts',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              {label: 'Title', name: 'title', widget: 'string'},
+              {label: 'Publish Date', name: 'date', widget: 'datetime'},
+              {label: 'Image', name: 'image', widget: 'image'},
+              {label: 'Body', name: 'body', widget: 'markdown'}
+            ]
+          },
+          {
+            name: 'pages',
+            label: 'Pages',
+            files: [
               {
-                name: 'blog',
-                label: 'Blog Posts',
-                folder: '_posts',
-                create: true,
-                slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+                label: 'Home Page',
+                name: 'home',
+                file: 'index.md',
                 fields: [
                   {label: 'Title', name: 'title', widget: 'string'},
-                  {label: 'Publish Date', name: 'date', widget: 'datetime'},
-                  {label: 'Image', name: 'image', widget: 'image'},
                   {label: 'Body', name: 'body', widget: 'markdown'}
                 ]
               },
               {
-                name: 'pages',
-                label: 'Pages',
-                files: [
-                  {
-                    label: 'Home Page',
-                    name: 'home',
-                    file: 'index.md',
-                    fields: [
-                      {label: 'Title', name: 'title', widget: 'string'},
-                      {label: 'Body', name: 'body', widget: 'markdown'}
-                    ]
-                  },
-                  {
-                    label: 'Research',
-                    name: 'research',
-                    file: 'research.md',
-                    fields: [
-                      {label: 'Title', name: 'title', widget: 'string'},
-                      {label: 'Body', name: 'body', widget: 'markdown'}
-                    ]
-                  },
-                  {
-                    label: 'Teaching',
-                    name: 'teaching',
-                    file: 'teaching.md',
-                    fields: [
-                      {label: 'Title', name: 'title', widget: 'string'},
-                      {label: 'Body', name: 'body', widget: 'markdown'}
-                    ]
-                  },
-                  {
-                    label: 'Hobbies',
-                    name: 'hobbies',
-                    file: 'hobbies.md',
-                    fields: [
-                      {label: 'Title', name: 'title', widget: 'string'},
-                      {label: 'Body', name: 'body', widget: 'markdown'}
-                    ]
-                  },
-                  {
-                    label: 'Links',
-                    name: 'links',
-                    file: 'links.md',
-                    fields: [
-                      {label: 'Title', name: 'title', widget: 'string'},
-                      {label: 'Body', name: 'body', widget: 'markdown'}
-                    ]
-                  }
+                label: 'Research',
+                name: 'research',
+                file: 'research.md',
+                fields: [
+                  {label: 'Title', name: 'title', widget: 'string'},
+                  {label: 'Body', name: 'body', widget: 'markdown'}
                 ]
               },
               {
-                name: 'gallery',
-                label: 'Gallery',
-                folder: 'gallery',
-                create: true,
-                slug: '{{slug}}',
+                label: 'Teaching',
+                name: 'teaching',
+                file: 'teaching.md',
                 fields: [
                   {label: 'Title', name: 'title', widget: 'string'},
-                  {label: 'Image', name: 'image', widget: 'image'}
+                  {label: 'Body', name: 'body', widget: 'markdown'}
+                ]
+              },
+              {
+                label: 'Hobbies',
+                name: 'hobbies',
+                file: 'hobbies.md',
+                fields: [
+                  {label: 'Title', name: 'title', widget: 'string'},
+                  {label: 'Body', name: 'body', widget: 'markdown'}
+                ]
+              },
+              {
+                label: 'Links',
+                name: 'links',
+                file: 'links.md',
+                fields: [
+                  {label: 'Title', name: 'title', widget: 'string'},
+                  {label: 'Body', name: 'body', widget: 'markdown'}
                 ]
               }
             ]
+          },
+          {
+            name: 'gallery',
+            label: 'Gallery',
+            folder: 'gallery',
+            create: true,
+            slug: '{{slug}}',
+            fields: [
+              {label: 'Title', name: 'title', widget: 'string'},
+              {label: 'Image', name: 'image', widget: 'image'}
+            ]
           }
-        });
-        
-        console.log('CMS initialized successfully');
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('success').style.display = 'block';
-        cmsLoaded = true;
-        
-      } catch (error) {
-        console.error('CMS initialization failed:', error);
-        showError('CMS initialization failed: ' + error.message);
+        ]
       }
-    }
+    });
     
-    function showError(message) {
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('error').style.display = 'block';
-      document.getElementById('error-message').textContent = message;
-    }
-    
-    // Start loading process
-    console.log('Starting CMS loading process...');
-    loadCMS();
-    
-    // Global timeout fallback
-    setTimeout(function() {
-      if (!cmsLoaded) {
-        showError('CMS loading timed out. Please refresh the page and try again.');
-      }
-    }, 30000);
+    console.log('CMS initialized with GitHub OAuth');
   </script>
 </body>
 </html>
