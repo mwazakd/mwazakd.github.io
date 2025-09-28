@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/favicon.ico">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Header / Navbar -->
+  <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-semibold hover:text-gray-600 transition">My Name</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-500 transition">Home</a>
+        <a href="research.html" class="hover:text-blue-500 transition">Research</a>
+        <a href="teaching.html" class="hover:text-blue-500 transition">Teaching</a>
+        <a href="blog.html" class="hover:text-blue-500 transition">Blog</a>
+        <a href="hobbies.html" class="hover:text-blue-500 transition">Hobbies</a>
+        <a href="certifications.html" class="hover:text-blue-500 transition">Certifications</a>
+        <a href="links.html" class="hover:text-blue-500 transition">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-4xl mx-auto px-4 pt-32 pb-16 text-center">
+    <img src="/images/profile.jpg" alt="Profile" class="mx-auto w-36 h-36 rounded-full shadow-lg object-cover mb-6">
+    <h1 class="text-4xl font-bold mb-4">Hello, I'm [Your Name]</h1>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">Welcome to my personal website! I am passionate about research, teaching, and sharing ideas through blogging. This is where I document my journey and projects.</p>
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Connect on LinkedIn</a>
+  </section>
+
+  <!-- Featured Blog Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8 text-center">Recent Blog Posts</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4">
+          <img src="/images/blog1.jpg" alt="Blog 1" class="rounded-lg mb-4 object-cover h-40 w-full">
+          <h3 class="font-semibold text-lg mb-2">Blog Post Title</h3>
+          <p class="text-gray-600 text-sm mb-2">A short description of the post goes here...</p>
+          <a href="#" class="text-blue-600 hover:underline">Read more →</a>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4">
+          <img src="/images/blog2.jpg" alt="Blog 2" class="rounded-lg mb-4 object-cover h-40 w-full">
+          <h3 class="font-semibold text-lg mb-2">Another Interesting Post</h3>
+          <p class="text-gray-600 text-sm mb-2">A short description of the post goes here...</p>
+          <a href="#" class="text-blue-600 hover:underline">Read more →</a>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4">
+          <img src="/images/blog3.jpg" alt="Blog 3" class="rounded-lg mb-4 object-cover h-40 w-full">
+          <h3 class="font-semibold text-lg mb-2">Third Blog Title</h3>
+          <p class="text-gray-600 text-sm mb-2">A short description of the post goes here...</p>
+          <a href="#" class="text-blue-600 hover:underline">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-16">
+    <div class="max-w-5xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
+      © 2025 My Name. Built with <a href="https://jekyllrb.com/" class="text-blue-600 hover:underline">Jekyll</a> & <a href="https://tailwindcss.com/" class="text-blue-600 hover:underline">Tailwind CSS</a>.
+    </div>
+  </footer>
+</body>
+</html>
