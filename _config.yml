@@ -1,7 +1,19 @@
-title: "Mk personal webpage"
-author: "Kudzaishe Mwaza"
-baseurl: ""
-url: ""
+﻿title: Mk personal webpage
+author: Kudzaishe Mwaza
+baseurl: "
+url: 
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+ - jekyll-feed
+ - jekyll-seo-tag
+exclude:
+ - DEPLOYMENT_GUIDE.md
+ - SETUP_INSTRUCTIONS.md
+ - setup.bat
+ - README.md
+ - node_modules
+ - _site
+ - .github
+ - package-lock.json
+ - package.json
+ - Gemfile
+ - Gemfile.lock
