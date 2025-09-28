@@ -2,7 +2,10 @@ backend:
   name: github
   repo: mwazakd/mwazakd.github.io
   branch: main
-  auth_type: implicit
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  client_id: Ov23liu2ilyXCHE9mSqe
+  client_secret: b0bea250856733bf76d99ac60e4355c9794d707a
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
