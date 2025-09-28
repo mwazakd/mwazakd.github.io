@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CMS Test</title>
+</head>
+<body>
+  <h1>Testing CMS Loading</h1>
+  <div id="status">Loading...</div>
+  
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    setTimeout(function() {
+      if (typeof CMS !== 'undefined') {
+        document.getElementById('status').innerHTML = '✅ CMS loaded successfully!';
+        console.log('CMS object:', CMS);
+      } else {
+        document.getElementById('status').innerHTML = '❌ CMS failed to load';
+      }
+    }, 2000);
+  </script>
+</body>
+</html>
