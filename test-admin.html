@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Admin Page</title>
+  <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+  <h1>Testing Admin Page</h1>
+  <p>If you can see this, the page is loading correctly.</p>
+  <script>
+    console.log('Admin page script loaded');
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'mwazakd/mwazakd.github.io',
+          branch: 'main',
+        },
+        media_folder: 'assets/uploads',
+        public_folder: '/assets/uploads',
+        site_url: 'https://mwazakd.github.io',
+        collections: [
+          {
+            name: 'blog',
+            label: 'Blog Posts',
+            folder: '_posts',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              {label: 'Title', name: 'title', widget: 'string'},
+              {label: 'Publish Date', name: 'date', widget: 'datetime'},
+              {label: 'Body', name: 'body', widget: 'markdown'}
+            ]
+          }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
