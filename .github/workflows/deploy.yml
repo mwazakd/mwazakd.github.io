@@ -33,20 +33,15 @@ jobs:
     - name: Build Tailwind CSS
       run: npm run build:css
     
-    - name: Setup Ruby
-      uses: ruby/setup-ruby@v1
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+    
+    - name: Build with Jekyll
+      uses: actions/jekyll-build-pages@v1
       with:
-        ruby-version: '3.0'
-        bundler-cache: false
-    
-    - name: Install Bundler
-      run: gem install bundler --version '~> 2.0'
-    
-    - name: Install gems
-      run: bundle install
-    
-    - name: Build site with Jekyll
-      run: bundle exec jekyll build -d _site
+        source: ./
+        destination: ./_site
+        node-version: '18'
     
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
