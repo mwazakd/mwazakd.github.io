@@ -1,12 +1,10 @@
 backend:
   name: github
-  repo: mwazakd/mwazakd.github.io   # your GitHub repo
-  branch: main               # main branch for edits
-  base_url: https://api.netlify.com   # needed for GitHub auth proxy
-  auth_endpoint: auth
+  repo: mwazakd/mwazakd.github.io
+  branch: main
 
-media_folder: "assets/uploads"     # where images are stored in repo
-public_folder: "/assets/uploads"  # URL path for the site
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 site_url: https://mwazakd.github.io
 logo_url: /assets/images/profile.jpg
