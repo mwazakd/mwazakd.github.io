@@ -1,0 +1,69 @@
+backend:
+  name: github
+  repo: mwazakd/mwazakd.github.io
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  client_id: Ov23liu2ilyXCHE9mSqe
+  client_secret: b0bea250856733bf76d99ac60e4355c9794d707a
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://mwazakd.github.io
+logo_url: /assets/images/profile.jpg
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Research"
+        name: "research"
+        file: "research.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Teaching"
+        name: "teaching"
+        file: "teaching.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Hobbies"
+        name: "hobbies"
+        file: "hobbies.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Links"
+        name: "links"
+        file: "links.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "gallery"
+    label: "Gallery"
+    folder: "gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
