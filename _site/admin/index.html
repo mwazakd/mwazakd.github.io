@@ -1,11 +1,103 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Manager</title>
-    <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
-  </head>
-  <body>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Manager - Mwaza Personal Website</title>
+  <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'mwazakd/mwazakd.github.io',
+          branch: 'main',
+        },
+        media_folder: 'assets/uploads',
+        public_folder: '/assets/uploads',
+        site_url: 'https://mwazakd.github.io',
+        logo_url: '/assets/images/profile.jpg',
+        collections: [
+          {
+            name: 'blog',
+            label: 'Blog Posts',
+            folder: '_posts',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              {label: 'Title', name: 'title', widget: 'string'},
+              {label: 'Publish Date', name: 'date', widget: 'datetime'},
+              {label: 'Image', name: 'image', widget: 'image'},
+              {label: 'Body', name: 'body', widget: 'markdown'}
+            ]
+          },
+          {
+            name: 'pages',
+            label: 'Pages',
+            files: [
+              {
+                label: 'Home Page',
+                name: 'home',
+                file: 'index.md',
+                fields: [
+                  {label: 'Title', name: 'title', widget: 'string'},
+                  {label: 'Body', name: 'body', widget: 'markdown'}
+                ]
+              },
+              {
+                label: 'Research',
+                name: 'research',
+                file: 'research.md',
+                fields: [
+                  {label: 'Title', name: 'title', widget: 'string'},
+                  {label: 'Body', name: 'body', widget: 'markdown'}
+                ]
+              },
+              {
+                label: 'Teaching',
+                name: 'teaching',
+                file: 'teaching.md',
+                fields: [
+                  {label: 'Title', name: 'title', widget: 'string'},
+                  {label: 'Body', name: 'body', widget: 'markdown'}
+                ]
+              },
+              {
+                label: 'Hobbies',
+                name: 'hobbies',
+                file: 'hobbies.md',
+                fields: [
+                  {label: 'Title', name: 'title', widget: 'string'},
+                  {label: 'Body', name: 'body', widget: 'markdown'}
+                ]
+              },
+              {
+                label: 'Links',
+                name: 'links',
+                file: 'links.md',
+                fields: [
+                  {label: 'Title', name: 'title', widget: 'string'},
+                  {label: 'Body', name: 'body', widget: 'markdown'}
+                ]
+              }
+            ]
+          },
+          {
+            name: 'gallery',
+            label: 'Gallery',
+            folder: 'gallery',
+            create: true,
+            slug: '{{slug}}',
+            fields: [
+              {label: 'Title', name: 'title', widget: 'string'},
+              {label: 'Image', name: 'image', widget: 'image'}
+            ]
+          }
+        ]
+      }
+    });
+  </script>
+</body>
 </html>
