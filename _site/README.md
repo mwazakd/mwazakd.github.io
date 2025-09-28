@@ -21,3 +21,4 @@ Push to `main` branch. GitHub Actions will run and publish to `gh-pages` automat
 
 ## Notes
 - If you prefer no build step, a simpler CDN-only version is possible (I can provide that too).
+"# Trigger deployment" 
