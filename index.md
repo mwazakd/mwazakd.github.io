@@ -1,275 +1,190 @@
 ---
-layout: jerrygao
+layout: default
 title: Home
 ---
 
-<!-- Hero Section -->
-<section id="about" class="pt-32 pb-20 px-8">
-    <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-12 gap-x-12 gap-y-8 items-start">
-            <!-- Left Column - Avatar -->
-            <div class="md:col-span-4">
-                <div class="sticky top-28">
-                    <img src="/assets/images/tutor5.jpg" alt="A portrait of Kudzaishe Mwaza" class="rounded-lg shadow-xl w-full border-4 border-white">
-                </div>
-            </div>
-            <!-- Right Column - Main Info -->
-            <div class="md:col-span-8">
-                <h1 class="text-6xl md:text-7xl font-bold mb-4 leading-none">Kudzaishe Mwaza</h1>
-                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-stone-600 mb-8">
-                    <span class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                            <path d="M12 10h.01"></path>
-                            <path d="M12 14h.01"></path>
-                            <path d="M12 6h.01"></path>
-                            <path d="M16 10h.01"></path>
-                            <path d="M16 14h.01"></path>
-                            <path d="M16 6h.01"></path>
-                            <path d="M8 10h.01"></path>
-                            <path d="M8 14h.01"></path>
-                            <path d="M8 6h.01"></path>
-                            <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"></path>
-                            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                        </svg>
-                        <span class="font-display text-sm">STEM Education Center</span>
-                    </span>
-                    <span class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span class="font-display text-sm">Harare, Zimbabwe</span>
-                    </span>
-                </div>
-                <div class="prose prose-lg prose-stone max-w-none">
-                    <p class="mb-2">
-                        I'm a tech enthusiast passionate about the intersection of education, robotics, and artificial intelligence. Currently, I teach STEM subjects to high school students, helping them build strong conceptual foundations and curiosity-driven thinking.
-                    </p>
-                    <p>
-                        My journey in Mechatronics Engineering sparked a deep interest in how intelligent systems can solve real-world problems — from autonomous robots to AI-driven learning tools. I enjoy bridging complex technical ideas with accessible explanations that empower others to learn and create.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-4 mt-10">
-                    <a href="mailto:mwazakd@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 bg-red-500 text-white hover:bg-red-600 transition-colors font-display text-sm font-medium rounded-md shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
-                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                        </svg>
-                        Email
-                    </a>
-                    <a href="/assets/mwazakd_cv.pdf" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white transition-colors font-display text-sm font-medium rounded-md shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                            <path d="M12 15V3"></path>
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <path d="m7 10 5 5 5-5"></path>
-                        </svg>
-                        CV
-                    </a>
-                    <a href="https://github.com/mwazakd" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-300 text-stone-700 hover:border-stone-900 transition-colors font-display text-sm font-medium rounded-md shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                        </svg>
-                        GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-300 text-stone-700 hover:border-stone-900 transition-colors font-display text-sm font-medium rounded-md shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                        LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- News Section -->
-        <div class="mt-24">
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-white p-8 border-2 border-stone-900 shadow-red">
-                    <h3 class="font-display font-bold text-sm mb-6 text-red-500 tracking-widest">RECENT NEWS</h3>
-                    <div id="news-container" class="space-y-4">
-                        <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0" data-index="1">
-                            <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Dec. 2024</span>
-                            <span class="text-base text-stone-700">I've started building my personal website to showcase my journey in STEM education and AI research.</span>
-                        </div>
-                        <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0" data-index="2">
-                            <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Nov. 2024</span>
-                            <span class="text-base text-stone-700">Completed advanced coursework in Machine Learning and Robotics, focusing on practical applications in education.</span>
-                        </div>
-                        <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0" data-index="3">
-                            <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Oct. 2024</span>
-                            <span class="text-base text-stone-700">Started mentoring high school students in robotics and programming, helping them build their first autonomous projects.</span>
-                        </div>
-                        <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0" data-index="4">
-                            <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Sep. 2024</span>
-                            <span class="text-base text-stone-700">Began preparing applications for graduate programs in Electrical and Computer Engineering with focus on AI and robotics.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Hero Section - Exact jerrygao.me layout -->
+<section class="max-w-4xl mx-auto px-4 pt-8 pb-16">
+  <!-- Name and Title -->
+  <div class="text-center mb-8">
+    <h1 class="text-4xl font-bold mb-2">Kudzaishe Mwaza</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">STEM Tutor | Aspiring AI & Robotics Researcher</p>
+    <p class="text-gray-500 dark:text-gray-400">Harare, Zimbabwe</p>
+  </div>
+  
+  <!-- About Section with Image - jerrygao.me style -->
+  <div class="flex flex-col lg:flex-row items-start gap-8 mb-16">
+    <div class="flex-shrink-0">
+      <img src="/assets/images/tutor5.jpg" alt="Kudzaishe Mwaza" class="w-48 h-48 rounded-lg shadow-lg object-cover">
     </div>
+    <div class="flex-1">
+      <p class="text-lg leading-relaxed mb-4">
+        I'm a tech enthusiast passionate about the intersection of education, robotics, and artificial intelligence. Currently, I teach STEM subjects to high school students, helping them build strong conceptual foundations and curiosity-driven thinking.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        My journey in Mechatronics Engineering sparked a deep interest in how intelligent systems can solve real-world problems — from autonomous robots to AI-driven learning tools. I enjoy bridging complex technical ideas with accessible explanations that empower others to learn and create.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        I'm now preparing to pursue graduate studies in Electrical and Computer Engineering, focusing on AI and robotics research. My long-term goal is to build technologies that advance education, accessibility, and sustainable development across Africa and beyond.
+      </p>
+      <p class="text-lg leading-relaxed">
+        When I'm not teaching or studying, I love exploring new ideas in machine learning, reading about human-centered AI, and sharing what I learn with others.
+      </p>
+    </div>
+  </div>
+  
+  <!-- Social Links - jerrygao.me style with extra spacing -->
+  <div class="text-center mb-20 mt-12">
+    <div class="flex justify-center space-x-6">
+      <a href="mailto:mwazakd@gmail.com" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Email</a>
+      <a href="/assets/mwazakd_cv.pdf" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">CV</a>
+      <a href="https://github.com/mwazakd" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">GitHub</a>
+      <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">LinkedIn</a>
+    </div>
+  </div>
 </section>
 
-<!-- Research Section -->
-<section id="research" class="py-20 px-8 bg-white">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-8">
-            <div class="lg:col-span-2">
-                <h2 class="font-display font-bold text-sm text-red-500 lg:vertical-text lg:sticky lg:top-32">RESEARCH AREAS</h2>
-            </div>
-            <div class="lg:col-span-10">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="group">
-                        <div class="p-8 bg-stone-50 border-l-4 border-red-500 hover:bg-red-50 transition-colors rounded-r-lg">
-                            <h3 class="font-display font-bold text-xl mb-3">Educational Robotics</h3>
-                            <p class="text-stone-600 leading-relaxed mb-4">Developing accessible robotics platforms for STEM education in underserved communities.</p>
-                            <a href="#research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-red-500 hover:text-red-600">
-                                Learn more 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
-                                    <path d="M5 12h14"></path>
-                                    <path d="m12 5 7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="p-8 bg-stone-50 border-l-4 border-stone-500 hover:bg-stone-50 transition-colors rounded-r-lg">
-                            <h3 class="font-display font-bold text-xl mb-3">AI for Education</h3>
-                            <p class="text-stone-600 leading-relaxed mb-4">Creating intelligent tutoring systems and personalized learning experiences.</p>
-                            <a href="#research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-stone-500 hover:text-stone-600">
-                                Learn more 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
-                                    <path d="M5 12h14"></path>
-                                    <path d="m12 5 7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="p-8 bg-stone-50 border-l-4 border-amber-500 hover:bg-amber-50 transition-colors rounded-r-lg">
-                            <h3 class="font-display font-bold text-xl mb-3">Human-Centered AI</h3>
-                            <p class="text-stone-600 leading-relaxed mb-4">Building AI systems that enhance human capabilities and promote accessibility.</p>
-                            <a href="#research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-amber-500 hover:text-amber-600">
-                                Learn more 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
-                                    <path d="M5 12h14"></path>
-                                    <path d="m12 5 7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Recent News Section -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">RECENT NEWS</h2>
+    <div class="space-y-6">
+      <div class="flex items-start gap-4">
+        <span class="text-sm text-gray-500 dark:text-gray-400 font-mono whitespace-nowrap">Dec. 2024</span>
+        <p class="text-gray-700 dark:text-gray-300">I've started building my personal website to showcase my journey in STEM education and AI research.</p>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="text-sm text-gray-500 dark:text-gray-400 font-mono whitespace-nowrap">Nov. 2024</span>
+        <p class="text-gray-700 dark:text-gray-300">Completed advanced coursework in Machine Learning and Robotics, focusing on practical applications in education.</p>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="text-sm text-gray-500 dark:text-gray-400 font-mono whitespace-nowrap">Oct. 2024</span>
+        <p class="text-gray-700 dark:text-gray-300">Started mentoring high school students in robotics and programming, helping them build their first autonomous projects.</p>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="text-sm text-gray-500 dark:text-gray-400 font-mono whitespace-nowrap">Sep. 2024</span>
+        <p class="text-gray-700 dark:text-gray-300">Began preparing applications for graduate programs in Electrical and Computer Engineering with focus on AI and robotics.</p>
+      </div>
     </div>
+    <div class="mt-6">
+      <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Show All News</a>
+    </div>
+  </div>
 </section>
 
-<!-- Publications Section -->
-<section id="publications" class="py-20 px-8 bg-stone-50">
-    <div class="max-w-4xl mx-auto">
-        <div class="mb-12 text-center">
-            <h2 class="text-4xl font-bold mb-4">Publications</h2>
-            <p class="text-stone-600 text-lg">A selection of my research work and academic contributions.</p>
-        </div>
-        <div class="flex justify-center gap-8 border-b-2 border-stone-200 mb-12">
-            <button data-tab="conference" class="tab-button font-display font-medium pb-4 px-2 border-b-4 -mb-0.5 transition-colors border-transparent text-stone-500 hover:text-stone-700 hover:border-red-300 tab-active">Conference Papers</button>
-        </div>
-        
-        <!-- Conference Papers -->
-        <div id="conference" class="tab-content space-y-8">
-            <div class="bg-white p-6 sm:p-8 border border-stone-200 hover:border-stone-400 hover:shadow-md transition-all rounded-lg">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                    <div class="flex-1">
-                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 font-display text-xs font-medium mb-3 rounded-full">IN PROGRESS</span>
-                        <h3 class="text-xl font-semibold mb-3 text-stone-900 leading-snug">Building Accessible STEM Education Through Robotics</h3>
-                        <p class="text-stone-600 mb-3 text-base">
-                            <strong>Kudzaishe Mwaza</strong>, Dr. Sarah Johnson, Prof. Michael Chen
-                        </p>
-                        <p class="text-stone-500 text-sm italic">
-                            International Conference on Educational Technology (ICET), 2025
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bg-white p-6 sm:p-8 border border-stone-200 hover:border-stone-400 hover:shadow-md transition-all rounded-lg">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                    <div class="flex-1">
-                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 font-display text-xs font-medium mb-3 rounded-full">ACCEPTED</span>
-                        <h3 class="text-xl font-semibold mb-3 text-stone-900 leading-snug">AI-Powered Learning Systems for Underprivileged Communities</h3>
-                        <p class="text-stone-600 mb-3 text-base">
-                            <strong>Kudzaishe Mwaza</strong>, Dr. Emily Rodriguez
-                        </p>
-                        <p class="text-stone-500 text-sm italic">
-                            African Conference on Artificial Intelligence (ACAI), 2024
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Research Areas Section -->
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">RESEARCH AREAS</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <h3 class="text-lg font-semibold mb-4">Educational Robotics</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Developing accessible robotics platforms for STEM education in underserved communities.</p>
+        <a href="/research" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Learn more</a>
+      </div>
+      <div class="text-center">
+        <h3 class="text-lg font-semibold mb-4">AI for Education</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Creating intelligent tutoring systems and personalized learning experiences.</p>
+        <a href="/research" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Learn more</a>
+      </div>
+      <div class="text-center">
+        <h3 class="text-lg font-semibold mb-4">Human-Centered AI</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Building AI systems that enhance human capabilities and promote accessibility.</p>
+        <a href="/research" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Learn more</a>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Teaching Section -->
-<section id="teaching" class="py-20 px-8 bg-white">
-    <div class="max-w-4xl mx-auto">
-        <div class="mb-12 text-center">
-            <h2 class="text-4xl font-bold mb-4">Teaching & Mentoring</h2>
-            <p class="text-stone-600 text-lg">My teaching experience and student mentoring activities.</p>
-        </div>
-        
-        <div class="space-y-8">
-            <div>
-                <h3 class="text-2xl font-bold mb-6 text-stone-900">TEACHING ASSISTANT</h3>
-                <div class="space-y-6">
-                    <div class="bg-stone-50 p-6 rounded-lg">
-                        <h4 class="text-xl font-semibold mb-2">STEM1001</h4>
-                        <p class="text-stone-600 mb-2 font-medium">Lead Teaching Assistant</p>
-                        <h5 class="text-lg font-semibold mb-2">Introduction to Robotics</h5>
-                        <p class="text-stone-600 mb-2">Fundamentals of robotics programming and autonomous systems for high school students</p>
-                        <p class="text-stone-500 text-sm">Fall 2023 - Present</p>
-                    </div>
-                    
-                    <div class="bg-stone-50 p-6 rounded-lg">
-                        <h4 class="text-xl font-semibold mb-2">STEM2002</h4>
-                        <p class="text-stone-600 mb-2 font-medium">Teaching Assistant</p>
-                        <h5 class="text-lg font-semibold mb-2">Advanced Mathematics</h5>
-                        <p class="text-stone-600 mb-2">Calculus and linear algebra for STEM students</p>
-                        <p class="text-stone-500 text-sm">Spring 2023 - Present</p>
-                    </div>
-                    
-                    <div class="bg-stone-50 p-6 rounded-lg">
-                        <h4 class="text-xl font-semibold mb-2">STEM1003</h4>
-                        <p class="text-stone-600 mb-2 font-medium">Teaching Assistant</p>
-                        <h5 class="text-lg font-semibold mb-2">Programming Fundamentals</h5>
-                        <p class="text-stone-600 mb-2">Introduction to Python programming for beginners</p>
-                        <p class="text-stone-500 text-sm">Fall 2022 - Present</p>
-                    </div>
-                </div>
+<!-- Publications Section - jerrygao.me style -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">Publications</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-8">A selection of my research work and academic contributions.</p>
+    
+    <div class="space-y-8">
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Conference Papers</h3>
+        <div class="space-y-6">
+          <div class="border-l-4 border-blue-500 pl-4">
+            <div class="flex items-start justify-between mb-2">
+              <h4 class="font-semibold text-lg">Building Accessible STEM Education Through Robotics</h4>
+              <span class="text-sm text-gray-500 dark:text-gray-400">IN PROGRESS</span>
             </div>
-            
-            <div>
-                <h3 class="text-2xl font-bold mb-6 text-stone-900">STUDENT MENTORING</h3>
-                <p class="text-stone-600 text-lg">Currently building my mentoring portfolio through hands-on robotics and programming projects with high school students.</p>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">
+              <strong>Kudzaishe Mwaza</strong>, Dr. Sarah Johnson, Prof. Michael Chen
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+              International Conference on Educational Technology (ICET), 2025
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-green-500 pl-4">
+            <div class="flex items-start justify-between mb-2">
+              <h4 class="font-semibold text-lg">AI-Powered Learning Systems for Underprivileged Communities</h4>
+              <span class="text-sm text-gray-500 dark:text-gray-400">ACCEPTED</span>
             </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">
+              <strong>Kudzaishe Mwaza</strong>, Dr. Emily Rodriguez
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+              African Conference on Artificial Intelligence (ACAI), 2024
+            </p>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-20 px-8 bg-stone-50">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
-        <p class="text-stone-600 text-lg mb-8">
-            I'm always interested in discussing research collaborations, teaching opportunities, or potential positions. Feel free to reach out.
-        </p>
-        <div class="flex justify-center space-x-6">
-            <a href="mailto:mwazakd@gmail.com" class="text-red-500 hover:text-red-600 font-medium">mwazakd@gmail.com</a>
-            <span class="text-stone-400">|</span>
-            <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-red-500 hover:text-red-600 font-medium">LinkedIn</a>
-        </div>
+<!-- Teaching Section - jerrygao.me style -->
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">Teaching & Mentoring</h2>
+    
+    <h3 class="text-lg font-semibold mb-6">TEACHING ASSISTANT</h3>
+    <div class="space-y-8 mb-8">
+      <div>
+        <h4 class="font-semibold text-lg">STEM1001</h4>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Lead Teaching Assistant</p>
+        <h5 class="font-medium mb-2">Introduction to Robotics</h5>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Fundamentals of robotics programming and autonomous systems for high school students</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Fall 2023 - Present</p>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-lg">STEM2002</h4>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Teaching Assistant</p>
+        <h5 class="font-medium mb-2">Advanced Mathematics</h5>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Calculus and linear algebra for STEM students</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Spring 2023 - Present</p>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-lg">STEM1003</h4>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Teaching Assistant</p>
+        <h5 class="font-medium mb-2">Programming Fundamentals</h5>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Introduction to Python programming for beginners</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Fall 2022 - Present</p>
+      </div>
     </div>
+    
+    <h3 class="text-lg font-semibold mb-6">STUDENT MENTORING</h3>
+    <p class="text-gray-600 dark:text-gray-300">Currently building my mentoring portfolio through hands-on robotics and programming projects with high school students.</p>
+  </div>
+</section>
+
+<!-- Get in Touch Section - jerrygao.me style -->
+<section id="contact" class="bg-gray-50 dark:bg-gray-800 py-16">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-bold mb-8">Get in Touch</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+      I'm always interested in discussing research collaborations, teaching opportunities, or potential positions. Feel free to reach out.
+    </p>
+    <div class="flex justify-center space-x-6">
+      <a href="mailto:mwazakd@gmail.com" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">mwazakd@gmail.com</a>
+      <span class="text-gray-400">|</span>
+      <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">LinkedIn</a>
+    </div>
+  </div>
 </section>
