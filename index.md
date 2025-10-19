@@ -11,12 +11,9 @@ title: Home
     <p class="text-gray-500 dark:text-gray-400">Harare, Zimbabwe</p>
   </div>
   
-  <!-- About Section with Image -->
-  <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
-    <div class="flex-shrink-0">
-      <img src="/assets/images/profile.jpg" alt="Kudzaishe Mwaza" class="w-48 h-48 rounded-lg shadow-lg object-cover">
-    </div>
-    <div class="flex-1 text-left">
+  <!-- About Section -->
+  <div class="mb-16">
+    <div class="text-left">
       <p class="text-lg leading-relaxed mb-4">
         I'm a tech enthusiast passionate about the intersection of education, robotics, and artificial intelligence. Currently, I teach STEM subjects to high school students, helping them build strong conceptual foundations and curiosity-driven thinking.
       </p>
@@ -35,8 +32,8 @@ title: Home
   <!-- Social Links -->
   <div class="text-center mb-16">
     <div class="flex justify-center space-x-6">
-      <a href="mailto:kudzaishe.mwaza@example.com" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Email</a>
-      <a href="/assets/cv.pdf" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">CV</a>
+      <a href="mailto:mwazakd@gmail.com" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Email</a>
+      <a href="/assets/mwazakd_cv.pdf" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">CV</a>
       <a href="https://github.com/mwazakd" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">GitHub</a>
       <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">LinkedIn</a>
     </div>
@@ -127,7 +124,7 @@ title: Home
       I'm always interested in discussing research collaborations, teaching opportunities, or potential positions. Feel free to reach out.
     </p>
     <div class="flex justify-center space-x-6">
-      <a href="mailto:kudzaishe.mwaza@example.com" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">kudzaishe.mwaza@example.com</a>
+      <a href="mailto:mwazakd@gmail.com" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">mwazakd@gmail.com</a>
       <span class="text-gray-400">|</span>
       <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">LinkedIn</a>
     </div>
