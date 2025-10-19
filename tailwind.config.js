@@ -3,6 +3,7 @@ module.exports = {
     './_layouts/**/*.html',
     './_includes/**/*.html',
     './*.md',
+    './*.html',
     './_posts/**/*.md'
   ],
   darkMode: 'class',
