@@ -5,10 +5,24 @@ title: Home
 
 <!-- Hero Section -->
 <section class="max-w-4xl mx-auto px-4 pt-8 pb-16">
-  <div class="text-center mb-12">
-    <h1 class="text-4xl font-bold mb-2">Kudzaishe Mwaza</h1>
-    <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">STEM Tutor | Aspiring AI & Robotics Researcher</p>
-    <p class="text-gray-500 dark:text-gray-400">Harare, Zimbabwe</p>
+  <!-- Professional Header with Name and Image -->
+  <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+    <div class="flex-shrink-0">
+      <img src="/assets/images/tutor5.jpg" alt="Kudzaishe Mwaza" class="w-32 h-32 rounded-full shadow-lg object-cover">
+    </div>
+    <div class="flex-1 text-left">
+      <h1 class="text-4xl font-bold mb-2">Kudzaishe Mwaza</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">STEM Tutor | Aspiring AI & Robotics Researcher</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-6">Harare, Zimbabwe</p>
+      
+      <!-- Social Links -->
+      <div class="flex flex-wrap gap-4">
+        <a href="mailto:mwazakd@gmail.com" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Email</a>
+        <a href="/assets/mwazakd_cv.pdf" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">CV</a>
+        <a href="https://github.com/mwazakd" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">GitHub</a>
+        <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">LinkedIn</a>
+      </div>
+    </div>
   </div>
   
   <!-- About Section -->
@@ -26,16 +40,6 @@ title: Home
       <p class="text-lg leading-relaxed">
         When I'm not teaching or studying, I love exploring new ideas in machine learning, reading about human-centered AI, and sharing what I learn with others.
       </p>
-    </div>
-  </div>
-  
-  <!-- Social Links -->
-  <div class="text-center mb-16">
-    <div class="flex justify-center space-x-6">
-      <a href="mailto:mwazakd@gmail.com" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Email</a>
-      <a href="/assets/mwazakd_cv.pdf" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">CV</a>
-      <a href="https://github.com/mwazakd" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">GitHub</a>
-      <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">LinkedIn</a>
     </div>
   </div>
 </section>
