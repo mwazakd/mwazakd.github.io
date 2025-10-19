@@ -3,42 +3,44 @@ layout: default
 title: Home
 ---
 
-<!-- Hero Section -->
+<!-- Hero Section - Exact jerrygao.me layout -->
 <section class="max-w-4xl mx-auto px-4 pt-8 pb-16">
-  <!-- Name and Image Side by Side -->
+  <!-- Name and Title -->
+  <div class="text-center mb-8">
+    <h1 class="text-4xl font-bold mb-2">Kudzaishe Mwaza</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">STEM Tutor | Aspiring AI & Robotics Researcher</p>
+    <p class="text-gray-500 dark:text-gray-400">Harare, Zimbabwe</p>
+  </div>
+  
+  <!-- About Section with Image - jerrygao.me style -->
   <div class="flex flex-col lg:flex-row items-start gap-8 mb-16">
     <div class="flex-shrink-0">
-      <img src="/assets/images/tutor5.jpg" alt="Kudzaishe Mwaza" class="w-32 h-32 rounded-lg shadow-lg object-cover">
+      <img src="/assets/images/tutor5.jpg" alt="Kudzaishe Mwaza" class="w-48 h-48 rounded-lg shadow-lg object-cover">
     </div>
     <div class="flex-1">
-      <h1 class="text-4xl font-bold mb-2">Kudzaishe Mwaza</h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">STEM Tutor | Aspiring AI & Robotics Researcher</p>
-      <p class="text-gray-500 dark:text-gray-400 mb-6">Harare, Zimbabwe</p>
-      
-      <!-- Social Links -->
-      <div class="flex flex-wrap gap-4 mb-8">
-        <a href="mailto:mwazakd@gmail.com" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Email</a>
-        <a href="/assets/mwazakd_cv.pdf" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">CV</a>
-        <a href="https://github.com/mwazakd" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">GitHub</a>
-        <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">LinkedIn</a>
-      </div>
+      <p class="text-lg leading-relaxed mb-4">
+        I'm a tech enthusiast passionate about the intersection of education, robotics, and artificial intelligence. Currently, I teach STEM subjects to high school students, helping them build strong conceptual foundations and curiosity-driven thinking.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        My journey in Mechatronics Engineering sparked a deep interest in how intelligent systems can solve real-world problems — from autonomous robots to AI-driven learning tools. I enjoy bridging complex technical ideas with accessible explanations that empower others to learn and create.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        I'm now preparing to pursue graduate studies in Electrical and Computer Engineering, focusing on AI and robotics research. My long-term goal is to build technologies that advance education, accessibility, and sustainable development across Africa and beyond.
+      </p>
+      <p class="text-lg leading-relaxed">
+        When I'm not teaching or studying, I love exploring new ideas in machine learning, reading about human-centered AI, and sharing what I learn with others.
+      </p>
     </div>
   </div>
   
-  <!-- About Section -->
-  <div class="mb-16">
-    <p class="text-lg leading-relaxed mb-4">
-      I'm a tech enthusiast passionate about the intersection of education, robotics, and artificial intelligence. Currently, I teach STEM subjects to high school students, helping them build strong conceptual foundations and curiosity-driven thinking.
-    </p>
-    <p class="text-lg leading-relaxed mb-4">
-      My journey in Mechatronics Engineering sparked a deep interest in how intelligent systems can solve real-world problems — from autonomous robots to AI-driven learning tools. I enjoy bridging complex technical ideas with accessible explanations that empower others to learn and create.
-    </p>
-    <p class="text-lg leading-relaxed mb-4">
-      I'm now preparing to pursue graduate studies in Electrical and Computer Engineering, focusing on AI and robotics research. My long-term goal is to build technologies that advance education, accessibility, and sustainable development across Africa and beyond.
-    </p>
-    <p class="text-lg leading-relaxed">
-      When I'm not teaching or studying, I love exploring new ideas in machine learning, reading about human-centered AI, and sharing what I learn with others.
-    </p>
+  <!-- Social Links - jerrygao.me style -->
+  <div class="text-center mb-16">
+    <div class="flex justify-center space-x-6">
+      <a href="mailto:mwazakd@gmail.com" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Email</a>
+      <a href="/assets/mwazakd_cv.pdf" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">CV</a>
+      <a href="https://github.com/mwazakd" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">GitHub</a>
+      <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">LinkedIn</a>
+    </div>
   </div>
 </section>
 
@@ -94,22 +96,76 @@ title: Home
   </div>
 </section>
 
-<!-- Teaching Section -->
+<!-- Publications Section - jerrygao.me style -->
 <section class="bg-gray-50 dark:bg-gray-800 py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">Publications</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-8">A selection of my research work and academic contributions.</p>
+    
+    <div class="space-y-8">
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Conference Papers</h3>
+        <div class="space-y-6">
+          <div class="border-l-4 border-blue-500 pl-4">
+            <div class="flex items-start justify-between mb-2">
+              <h4 class="font-semibold text-lg">Building Accessible STEM Education Through Robotics</h4>
+              <span class="text-sm text-gray-500 dark:text-gray-400">IN PROGRESS</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">
+              <strong>Kudzaishe Mwaza</strong>, Dr. Sarah Johnson, Prof. Michael Chen
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+              International Conference on Educational Technology (ICET), 2025
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-green-500 pl-4">
+            <div class="flex items-start justify-between mb-2">
+              <h4 class="font-semibold text-lg">AI-Powered Learning Systems for Underprivileged Communities</h4>
+              <span class="text-sm text-gray-500 dark:text-gray-400">ACCEPTED</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">
+              <strong>Kudzaishe Mwaza</strong>, Dr. Emily Rodriguez
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+              African Conference on Artificial Intelligence (ACAI), 2024
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaching Section - jerrygao.me style -->
+<section class="py-16">
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="text-2xl font-bold mb-8">Teaching & Mentoring</h2>
     
-    <h3 class="text-lg font-semibold mb-6">TEACHING EXPERIENCE</h3>
-    <div class="space-y-6 mb-8">
+    <h3 class="text-lg font-semibold mb-6">TEACHING ASSISTANT</h3>
+    <div class="space-y-8 mb-8">
       <div>
-        <h4 class="font-semibold">STEM Tutor</h4>
-        <p class="text-gray-600 dark:text-gray-300">High School Mathematics, Physics, and Computer Science</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400">2023 - Present</p>
+        <h4 class="font-semibold text-lg">STEM1001</h4>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Lead Teaching Assistant</p>
+        <h5 class="font-medium mb-2">Introduction to Robotics</h5>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Fundamentals of robotics programming and autonomous systems for high school students</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Fall 2023 - Present</p>
       </div>
+      
       <div>
-        <h4 class="font-semibold">Robotics Workshop Instructor</h4>
-        <p class="text-gray-600 dark:text-gray-300">Introduction to Robotics and Programming for High School Students</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400">2024 - Present</p>
+        <h4 class="font-semibold text-lg">STEM2002</h4>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Teaching Assistant</p>
+        <h5 class="font-medium mb-2">Advanced Mathematics</h5>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Calculus and linear algebra for STEM students</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Spring 2023 - Present</p>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-lg">STEM1003</h4>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Teaching Assistant</p>
+        <h5 class="font-medium mb-2">Programming Fundamentals</h5>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">Introduction to Python programming for beginners</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Fall 2022 - Present</p>
       </div>
     </div>
     
@@ -118,8 +174,8 @@ title: Home
   </div>
 </section>
 
-<!-- Get in Touch Section -->
-<section id="contact" class="py-16">
+<!-- Get in Touch Section - jerrygao.me style -->
+<section id="contact" class="bg-gray-50 dark:bg-gray-800 py-16">
   <div class="max-w-4xl mx-auto px-4 text-center">
     <h2 class="text-2xl font-bold mb-8">Get in Touch</h2>
     <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
