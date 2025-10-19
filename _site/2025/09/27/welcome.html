@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +8,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .font-display { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .hover-underline { position: relative; }
+    .hover-underline::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #ef4444; transition: width 0.3s ease; }
+    .hover-underline:hover::after { width: 100%; }
+    .lg\:vertical-text { writing-mode: vertical-rl; text-orientation: mixed; }
+  </style>
 </head>
-<body class="bg-white text-gray-900 font-sans dark:bg-gray-900 dark:text-gray-100 antialiased" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <header class="fixed w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm z-50">
-  <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-    <a href="/" class="text-xl font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition">Kudzaishe Mwaza</a>
-    <nav class="flex items-center space-x-8">
-      <a href="/" class="hover:text-gray-600 dark:hover:text-gray-300 transition">About</a>
-      <a href="/research" class="hover:text-gray-600 dark:hover:text-gray-300 transition">Research</a>
-      <a href="/teaching" class="hover:text-gray-600 dark:hover:text-gray-300 transition">Teaching</a>
-      <a href="/blog" class="hover:text-gray-600 dark:hover:text-gray-300 transition">Blog</a>
-      <a href="#contact" class="hover:text-gray-600 dark:hover:text-gray-300 transition">Contact</a>
-      <button id="theme-toggle" class="ml-4 text-sm border rounded px-2 py-1 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition">🌓</button>
-    </nav>
+<body class="bg-white text-stone-900 font-display antialiased">
+  <header class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-8 py-5">
+    <div class="flex justify-between items-center">
+      <div class="font-display font-bold text-xl">
+        <a href="/" class="flex items-center gap-2 text-stone-900">
+          <span class="text-red-500">●</span>
+          Kudzaishe Mwaza
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-10">
+        <a href="/" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">About</a>
+        <a href="#research" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Research</a>
+        <a href="#publications" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Publications</a>
+        <a href="#teaching" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Teaching</a>
+        <a href="#contact" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Contact</a>
+        <button id="theme-toggle" class="ml-4 text-sm border rounded px-2 py-1 border-stone-300 hover:bg-stone-100 transition">🌓</button>
+      </div>
+    </div>
   </div>
 </header>
 
-  <main class="pt-20">
+  <main>
     <article class="max-w-4xl mx-auto px-4 pt-8 pb-16">
   <header class="mb-8">
     <h1 class="text-4xl font-bold mb-4">Welcome to My Blog</h1>
@@ -43,9 +57,9 @@
   </div>
 </article>
   </main>
-  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 mt-16">
-  <div class="max-w-4xl mx-auto px-4 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
-    © 2025 Kudzaishe Mwaza · Built with <a href="https://jekyllrb.com/" class="text-blue-600 hover:underline dark:text-blue-400">Jekyll</a> & <a href="https://tailwindcss.com/" class="text-blue-600 hover:underline dark:text-blue-400">Tailwind CSS</a>
+  <footer class="py-6 px-8 bg-stone-950 text-stone-400">
+  <div class="max-w-7xl mx-auto text-center">
+    <p class="font-display text-sm">© 2025 Kudzaishe Mwaza · Built with <a href="https://jekyllrb.com/" class="text-blue-400 hover:underline">Jekyll</a> & <a href="https://tailwindcss.com/" class="text-blue-400 hover:underline">Tailwind CSS</a></p>
   </div>
 </footer>
   <script>
