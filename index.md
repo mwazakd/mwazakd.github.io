@@ -6,32 +6,42 @@ title: Home
 <!-- Hero Section - Exact jerrygao.me layout -->
 <section class="max-w-4xl mx-auto px-4 pt-8 pb-16">
   <!-- Name and Title -->
-  <div class="text-center mb-8">
-    <h1 class="text-4xl font-bold mb-2">Kudzaishe Mwaza</h1>
-    <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">STEM Tutor | Aspiring AI & Robotics Researcher</p>
-    <p class="text-gray-500 dark:text-gray-400">Harare, Zimbabwe</p>
-  </div>
-  
-  <!-- About Section with Image - jerrygao.me style -->
   <div class="flex flex-col lg:flex-row items-start gap-8 mb-16">
     <div class="flex-shrink-0">
       <img src="/assets/images/tutor5.jpg" alt="Kudzaishe Mwaza" class="w-48 h-48 rounded-lg shadow-lg object-cover">
     </div>
-    <div class="flex-1">
-      <p class="text-lg leading-relaxed mb-4">
-        I'm a tech enthusiast passionate about the intersection of education, robotics, and artificial intelligence. Currently, I teach STEM subjects to high school students, helping them build strong conceptual foundations and curiosity-driven thinking.
-      </p>
-      <p class="text-lg leading-relaxed mb-4">
-        My journey in Mechatronics Engineering sparked a deep interest in how intelligent systems can solve real-world problems — from autonomous robots to AI-driven learning tools. I enjoy bridging complex technical ideas with accessible explanations that empower others to learn and create.
-      </p>
-      <p class="text-lg leading-relaxed mb-4">
-        I'm now preparing to pursue graduate studies in Electrical and Computer Engineering, focusing on AI and robotics research. My long-term goal is to build technologies that advance education, accessibility, and sustainable development across Africa and beyond.
-      </p>
-      <p class="text-lg leading-relaxed">
-        When I'm not teaching or studying, I love exploring new ideas in machine learning, reading about human-centered AI, and sharing what I learn with others.
-      </p>
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold mb-2">Kudzaishe Mwaza</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">STEM Tutor | Aspiring AI & Robotics Researcher</p>
+      <p class="text-gray-500 dark:text-gray-400">Harare, Zimbabwe</p>
+      <div class="flex flex-col lg:flex-row items-start gap-8 mb-16">
+        <div class="flex-1">
+          <p class="text-lg leading-relaxed mb-4">
+            I'm a tech enthusiast passionate about the intersection of education, robotics, and artificial intelligence. Currently, I teach STEM subjects to high school students, helping them build strong conceptual foundations and curiosity-driven thinking.
+          </p>
+          <p class="text-lg leading-relaxed mb-4">
+            My journey in Mechatronics Engineering sparked a deep interest in how intelligent systems can solve real-world problems — from autonomous robots to AI-driven learning tools. I enjoy bridging complex technical ideas with accessible explanations that empower others to learn and create.
+          </p>
+          <p class="text-lg leading-relaxed mb-4">
+            I'm now preparing to pursue graduate studies in Electrical and Computer Engineering, focusing on AI and robotics research. My long-term goal is to build technologies that advance education, accessibility, and sustainable development across Africa and beyond.
+          </p>
+          <p class="text-lg leading-relaxed">
+            When I'm not teaching or studying, I love exploring new ideas in machine learning, reading about human-centered AI, and sharing what I learn with others.
+          </p>
+          <div class="text-center mb-16">
+            <div class="flex justify-center space-x-6">
+              <a href="mailto:mwazakd@gmail.com" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Email</a>
+              <a href="/assets/mwazakd_cv.pdf" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">CV</a>
+              <a href="https://github.com/mwazakd" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">GitHub</a>
+              <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- About Section with Image - jerrygao.me style -->
   
   <!-- Social Links - jerrygao.me style -->
   <div class="text-center mb-16">
