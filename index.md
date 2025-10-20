@@ -55,7 +55,7 @@ title: Home
               <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
               <rect x="2" y="4" width="20" height="16" rx="2"></rect>
             </svg>
-            Email
+            <span id="email-text" class="inline-block w-12 text-center">Email</span>
           </a>
           <span id="email-copy-status" class="sr-only" aria-live="polite"></span>
           <a href="/assets/mwazakd_cv.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white transition-colors font-display text-sm font-medium rounded-md shadow-md">
@@ -254,9 +254,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const emailBtn = document.getElementById('email-btn');
   const emailStatus = document.getElementById('email-copy-status');
   if (emailBtn) {
+    const emailText = document.getElementById('email-text');
     emailBtn.addEventListener('click', async function (e) {
       e.preventDefault();
-      const original = emailBtn.textContent.trim();
+      const original = emailText.textContent.trim();
       const email = emailBtn.getAttribute('data-email') || 'mwazakd@gmail.com';
       try {
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -272,10 +273,10 @@ document.addEventListener('DOMContentLoaded', function() {
           document.execCommand('copy');
           document.body.removeChild(ta);
         }
-        emailBtn.textContent = 'Copied!';
+        emailText.textContent = 'Copied!';
         if (emailStatus) emailStatus.textContent = 'Email copied to clipboard.';
         setTimeout(() => {
-          emailBtn.textContent = original;
+          emailText.textContent = original;
           if (emailStatus) emailStatus.textContent = '';
         }, 1200);
       } catch (err) {
