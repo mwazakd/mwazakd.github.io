@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<main class="max-w-4xl mx-auto px-4 pt-32 pb-8">
+  <article class="prose prose-lg max-w-none dark:prose-invert">
+    <!-- Post Header -->
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ page.title }}</h1>
+      
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-6">
+        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.author %}
+        <span>by {{ page.author }}</span>
+        {% endif %}
+        {% if page.categories %}
+        <div class="flex gap-2">
+          {% for category in page.categories %}
+          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">
+            {{ category }}
+          </span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      
+      {% if page.image %}
+      <div class="mb-8">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" 
+             class="w-full h-64 object-cover rounded-lg shadow-lg">
+      </div>
+      {% endif %}
+    </header>
+    
+    <!-- Post Content -->
+    <div class="prose prose-lg max-w-none dark:prose-invert">
+      {{ content }}
+    </div>
+    
+    <!-- Post Footer -->
+    <footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+      <div class="flex justify-between items-center">
+        <div>
+          {% if page.tags %}
+          <div class="flex flex-wrap gap-2 mb-4">
+            {% for tag in page.tags %}
+            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
+              #{{ tag }}
+            </span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        
+        <div class="text-sm text-gray-500 dark:text-gray-400">
+          <a href="{{ '/blog' | relative_url }}" class="hover:text-blue-600 dark:hover:text-blue-400">
+            ← Back to Blog
+          </a>
+        </div>
+      </div>
+    </footer>
+  </article>
+</main>
