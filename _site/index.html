@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Kudzaishe Mwaza</title>
-  <link rel="stylesheet" href="/assets/css/output.css">
+  <link rel="stylesheet" href="/assets/css/output.css?v=1761050562">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,8 +29,8 @@
       <div class="hidden md:flex items-center space-x-10">
         <a href="/" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">About</a>
         <a href="#research" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Research</a>
-        <a href="#publications" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Publications</a>
         <a href="#teaching" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Teaching</a>
+        <a href="/blog" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Blog</a>
         <a href="#contact" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Contact</a>
         <button id="theme-toggle" class="ml-4 text-sm border rounded px-2 py-1 border-stone-300 hover:bg-stone-100 transition">🌓</button>
       </div>
@@ -67,7 +67,7 @@
               <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"></path>
               <rect x="4" y="2" width="16" height="20" rx="2"></rect>
             </svg>
-            <span class="font-display text-sm">STEM Education Center</span>
+            <span class="font-display text-sm">STEM Education</span>
           </span>
           <span class="flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
@@ -86,14 +86,15 @@
           </p>
         </div>
         <div class="flex flex-wrap gap-4 mt-10">
-          <a href="mailto:mwazakd@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 bg-red-500 text-white hover:bg-red-600 transition-colors font-display text-sm font-medium rounded-md shadow-md">
+          <a id="email-btn" href="mailto:mwazakd@gmail.com" data-email="mwazakd@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 bg-red-500 text-white hover:bg-red-600 transition-colors font-display text-sm font-medium rounded-md shadow-md" aria-describedby="email-copy-status">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
               <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
               <rect x="2" y="4" width="20" height="16" rx="2"></rect>
             </svg>
-            Email
+            <span id="email-text" class="inline-block w-12 text-center">Email</span>
           </a>
-          <a href="/assets/mwazakd_cv.pdf" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white transition-colors font-display text-sm font-medium rounded-md shadow-md">
+          <span id="email-copy-status" class="sr-only" aria-live="polite"></span>
+          <a href="/assets/mwazakd_cv.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white transition-colors font-display text-sm font-medium rounded-md shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
               <path d="M12 15V3"></path>
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -101,14 +102,14 @@
             </svg>
             CV
           </a>
-          <a href="https://github.com/mwazakd" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-300 text-stone-700 hover:border-stone-900 transition-colors font-display text-sm font-medium rounded-md shadow-md">
+          <a href="https://github.com/mwazakd" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-300 text-stone-700 hover:border-stone-900 transition-colors font-display text-sm font-medium rounded-md shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
               <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
               <path d="M9 18c-4.51 2-5-2-7-2"></path>
             </svg>
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-300 text-stone-700 hover:border-stone-900 transition-colors font-display text-sm font-medium rounded-md shadow-md">
+          <a href="https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-stone-300 text-stone-700 hover:border-stone-900 transition-colors font-display text-sm font-medium rounded-md shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
               <rect x="2" y="9" width="4" height="12"></rect>
@@ -127,24 +128,20 @@
           <h3 class="font-display font-bold text-sm mb-6 text-red-500 tracking-widest">RECENT NEWS</h3>
           <div id="news-container" class="space-y-4">
             <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0" data-index="1">
-              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Dec. 2024</span>
-              <span class="text-base text-stone-700">I've started building my personal website to showcase my journey in STEM education and AI research.</span>
+              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Oct. 2025</span>
+              <span class="text-base text-stone-700">Wrote sample personal statements and essays. Updated my resume.</span>
             </div>
             <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0" data-index="2">
-              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Nov. 2024</span>
-              <span class="text-base text-stone-700">Completed advanced coursework in Machine Learning and Robotics, focusing on practical applications in education.</span>
+              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Sep. 2025</span>
+              <span class="text-base text-stone-700">I've started building my personal website to showcase my journey in STEM education and AI research.</span>
             </div>
             <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0" data-index="3">
-              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Oct. 2024</span>
-              <span class="text-base text-stone-700">Started mentoring high school students in robotics and programming, helping them build their first autonomous projects.</span>
+              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Sep. 2025</span>
+              <span class="text-base text-stone-700">Began preparing applications for graduate programs.</span>
             </div>
             <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0" data-index="4">
-              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Sep. 2024</span>
-              <span class="text-base text-stone-700">Began preparing applications for graduate programs in Electrical and Computer Engineering with focus on AI and robotics.</span>
-            </div>
-            <div class="news-item flex gap-4 pb-4 border-b border-stone-200 last:border-0 hidden" data-index="5">
-              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Aug. 2024</span>
-              <span class="text-base text-stone-700">Completed summer research internship focusing on educational robotics applications in underserved communities.</span>
+              <span class="font-display text-xs text-stone-500 whitespace-nowrap pt-1">Aug. 2025</span>
+              <span class="text-base text-stone-700">Graduated from University of Zimbabwe with a Mechatronics engineering degree (2.1).</span>
             </div>
           </div>
           <div class="mt-6 text-center">
@@ -164,121 +161,60 @@
 <!-- Research Section -->
 <section id="research" class="py-20 px-8 bg-white">
   <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold mb-12 text-center">Research</h2>
     <div class="grid lg:grid-cols-12 gap-8">
       <div class="lg:col-span-2">
-        <h2 class="font-display font-bold text-sm text-red-500 lg:vertical-text lg:sticky lg:top-32">RESEARCH AREAS</h2>
+         <h2 class="font-display font-bold text-sm text-red-500 lg:sticky lg:top-32">RESEARCH INTEREST</h2>
       </div>
       <div class="lg:col-span-10">
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="group">
-            <div class="p-8 bg-stone-50 border-l-4 border-red-500 hover:bg-red-50 transition-colors rounded-r-lg">
-              <h3 class="font-display font-bold text-xl mb-3">Educational Robotics</h3>
-              <p class="text-stone-600 leading-relaxed mb-4">Developing accessible robotics platforms for STEM education in underserved communities.</p>
-              <a href="/research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-red-500 hover:text-red-600">
-                Learn more 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
+         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <div class="group flex">
+             <div class="p-8 bg-stone-50 border-l-4 border-red-500 hover:bg-red-50 transition-colors rounded-r-lg flex flex-col h-full w-full">
+               <h3 class="font-display font-bold text-xl mb-3">Educational Robotics</h3>
+               <p class="text-stone-600 leading-relaxed mb-4 flex-grow">Developing accessible robotics platforms for STEM education in underserved communities.</p>
+               <a href="/research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-red-500 hover:text-red-600 mt-auto">
+                 Learn more 
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
+                   <path d="M5 12h14"></path>
+                   <path d="m12 5 7 7-7 7"></path>
+                 </svg>
+               </a>
+             </div>
+           </div>
+            <div class="group flex">
+              <div class="p-8 bg-stone-50 border-l-4 border-stone-500 hover:bg-stone-50 transition-colors rounded-r-lg flex flex-col h-full w-full">
+                <h3 class="font-display font-bold text-xl mb-3">AI for Low-Resource and Socially Grounded Applications</h3>
+                <p class="text-stone-600 leading-relaxed mb-4 flex-grow">Building adaptive AI systems that serve diverse communities and environments.</p>
+                <a href="/research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-stone-500 hover:text-stone-600 mt-auto">
+                  Learn more 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="group">
-            <div class="p-8 bg-stone-50 border-l-4 border-stone-500 hover:bg-stone-50 transition-colors rounded-r-lg">
-              <h3 class="font-display font-bold text-xl mb-3">AI for Education</h3>
-              <p class="text-stone-600 leading-relaxed mb-4">Creating intelligent tutoring systems and personalized learning experiences.</p>
-              <a href="/research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-stone-500 hover:text-stone-600">
-                Learn more 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="group">
-            <div class="p-8 bg-stone-50 border-l-4 border-amber-500 hover:bg-amber-50 transition-colors rounded-r-lg">
-              <h3 class="font-display font-bold text-xl mb-3">Human-Centered AI</h3>
-              <p class="text-stone-600 leading-relaxed mb-4">Building AI systems that enhance human capabilities and promote accessibility.</p>
-              <a href="/research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-amber-500 hover:text-amber-600">
-                Learn more 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
+           <div class="group flex">
+             <div class="p-8 bg-stone-50 border-l-4 border-amber-500 hover:bg-amber-50 transition-colors rounded-r-lg flex flex-col h-full w-full">
+               <h3 class="font-display font-bold text-xl mb-3">Human-Centered AI</h3>
+               <p class="text-stone-600 leading-relaxed mb-4 flex-grow">Building AI systems that enhance human capabilities and promote accessibility.</p>
+               <a href="/research" class="inline-flex items-center gap-2 font-display text-sm font-medium text-amber-500 hover:text-amber-600 mt-auto">
+                 Learn more 
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
+                   <path d="M5 12h14"></path>
+                   <path d="m12 5 7 7-7 7"></path>
+                 </svg>
+               </a>
+             </div>
+           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- Publications Section -->
-<section id="publications" class="py-20 px-8 bg-stone-50">
-  <div class="max-w-4xl mx-auto">
-    <div class="mb-12 text-center">
-      <h2 class="text-4xl font-bold mb-4">Publications</h2>
-      <p class="text-stone-600 text-lg">A selection of my research work and academic contributions.</p>
-    </div>
-    <div class="flex justify-center gap-8 border-b-2 border-stone-200 mb-12">
-      <button data-tab="conference" class="tab-button font-display font-medium pb-4 px-2 border-b-4 -mb-0.5 transition-colors border-transparent text-stone-500 hover:text-stone-700 hover:border-red-300 tab-active">Conference Papers</button>
-    </div>
-    <!-- Conference Papers -->
-    <div id="conference" class="tab-content space-y-8">
-      <div class="bg-white p-6 sm:p-8 border border-stone-200 hover:border-stone-400 hover:shadow-md transition-all rounded-lg">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          <div class="flex-1">
-            <span class="inline-block px-3 py-1 bg-amber-100 text-amber-800 font-display text-xs font-medium mb-3 rounded-full">IN PROGRESS</span>
-            <h3 class="text-xl font-semibold mb-3 text-stone-900 leading-snug">Building Accessible STEM Education Through Robotics</h3>
-            <p class="text-stone-600 mb-3 text-base">
-              <strong>Kudzaishe Mwaza</strong>, Dr. Sarah Johnson, Prof. Michael Chen
-            </p>
-            <p class="font-display text-sm text-stone-500">
-              <em>International Conference on Educational Technology (ICET)</em>, 2025
-            </p>
-          </div>
-          <div class="flex-shrink-0 flex flex-row gap-2 sm:gap-3">
-            <a href="#" class="flex-1 sm:flex-none flex items-center justify-center p-2.5 sm:p-2.5 border border-stone-300 hover:bg-stone-100 transition-colors rounded-md text-stone-600 hover:text-stone-900" title="Download PDF">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.5 h-4.5">
-                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                <path d="M10 9H8"></path>
-                <path d="M16 13H8"></path>
-                <path d="M16 17H8"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white p-6 sm:p-8 border border-stone-200 hover:border-stone-400 hover:shadow-md transition-all rounded-lg">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          <div class="flex-1">
-            <span class="inline-block px-3 py-1 bg-amber-100 text-amber-800 font-display text-xs font-medium mb-3 rounded-full">ACCEPTED</span>
-            <h3 class="text-xl font-semibold mb-3 text-stone-900 leading-snug">AI-Powered Learning Systems for Underprivileged Communities</h3>
-            <p class="text-stone-600 mb-3 text-base">
-              <strong>Kudzaishe Mwaza</strong>, Dr. Emily Rodriguez
-            </p>
-            <p class="font-display text-sm text-stone-500">
-              <em>African Conference on Artificial Intelligence (ACAI)</em>, 2024
-            </p>
-          </div>
-          <div class="flex-shrink-0 flex flex-row gap-2 sm:gap-3">
-            <a href="#" class="flex-1 sm:flex-none flex items-center justify-center p-2.5 sm:p-2.5 border border-stone-300 hover:bg-stone-100 transition-colors rounded-md text-stone-600 hover:text-stone-900" title="Download PDF">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.5 h-4.5">
-                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                <path d="M10 9H8"></path>
-                <path d="M16 13H8"></path>
-                <path d="M16 17H8"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="max-w-3xl mx-auto text-center mt-8">
+    <p class="text-stone-600 leading-relaxed">
+      These areas reflect my current research interests and the directions I hope to explore in developing AI that is inclusive, data-efficient, and grounded in real-world contexts.
+    </p>
   </div>
 </section>
 
@@ -286,60 +222,49 @@
 <section id="teaching" class="py-20 px-8 bg-white">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold mb-12 text-center">Teaching &amp; Mentoring</h2>
-    <!-- Teaching Assistant Section -->
+    <!-- STEM Tutor Section -->
     <div class="mb-16">
-      <h3 class="font-display font-bold text-sm text-red-500 mb-8 tracking-widest text-center">TEACHING ASSISTANT</h3>
+      <h3 class="font-display font-bold text-sm text-red-500 mb-8 tracking-widest text-center">STEM TUTOR</h3>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-stone-50 p-6 border-l-4 border-red-500 hover:bg-red-50 transition-colors rounded-r-lg">
           <div class="flex items-start justify-between mb-3">
-            <h4 class="font-display font-bold text-lg text-stone-900">STEM1001</h4>
-            <span class="px-2 py-1 bg-stone-200 text-stone-600 font-display text-xs rounded-full">Lead Teaching Assistant</span>
+            <h4 class="font-display font-bold text-lg text-stone-900">Physics</h4>
+            <span class="px-2 py-1 bg-stone-200 text-stone-600 font-display text-xs rounded-full">Tutor</span>
           </div>
-          <h5 class="font-semibold text-stone-800 mb-2">Introduction to Robotics</h5>
-          <p class="text-stone-600 text-sm mb-4 leading-relaxed">Fundamentals of robotics programming and autonomous systems for high school students</p>
+          <h5 class="font-semibold text-stone-800 mb-2">Mechanics • Electricity &amp; Magnetism • Waves</h5>
+          <p class="text-stone-600 text-sm mb-4 leading-relaxed">Tutored 100+ students; built conceptual foundations with problem-solving drills and exam prep. Integrated real-world contexts and lab-style reasoning to strengthen intuition.</p>
           <div class="flex flex-wrap gap-1">
-            <span class="px-2 py-1 bg-red-100 text-red-700 font-display text-xs rounded">Fall 2023</span>
-            <span class="px-2 py-1 bg-red-100 text-red-700 font-display text-xs rounded">Spring 2024</span>
-            <span class="px-2 py-1 bg-red-100 text-red-700 font-display text-xs rounded">Fall 2024</span>
+            <span class="px-2 py-1 bg-red-100 text-red-700 font-display text-xs rounded">2020 – Present</span>
           </div>
         </div>
         
         <div class="bg-stone-50 p-6 border-l-4 border-stone-500 hover:bg-stone-50 transition-colors rounded-r-lg">
           <div class="flex items-start justify-between mb-3">
-            <h4 class="font-display font-bold text-lg text-stone-900">STEM2002</h4>
-            <span class="px-2 py-1 bg-stone-200 text-stone-600 font-display text-xs rounded-full">Teaching Assistant</span>
+            <h4 class="font-display font-bold text-lg text-stone-900">Mathematics</h4>
+            <span class="px-2 py-1 bg-stone-200 text-stone-600 font-display text-xs rounded-full">Tutor</span>
           </div>
-          <h5 class="font-semibold text-stone-800 mb-2">Advanced Mathematics</h5>
-          <p class="text-stone-600 text-sm mb-4 leading-relaxed">Calculus and linear algebra for STEM students</p>
+          <h5 class="font-semibold text-stone-800 mb-2">Algebra • Calculus • Problem Solving</h5>
+          <p class="text-stone-600 text-sm mb-4 leading-relaxed">Designed individualized plans; emphasized conceptual understanding and exam strategy. Encouraged active learning and mathematical confidence through guided discovery, discussion, and adaptive feedback.</p>
           <div class="flex flex-wrap gap-1">
-            <span class="px-2 py-1 bg-stone-100 text-stone-700 font-display text-xs rounded">Spring 2023</span>
-            <span class="px-2 py-1 bg-stone-100 text-stone-700 font-display text-xs rounded">Spring 2024</span>
+            <span class="px-2 py-1 bg-amber-100 text-amber-700 font-display text-xs rounded">2020 – Present</span>
           </div>
         </div>
         
         <div class="bg-stone-50 p-6 border-l-4 border-amber-500 hover:bg-amber-50 transition-colors rounded-r-lg">
           <div class="flex items-start justify-between mb-3">
-            <h4 class="font-display font-bold text-lg text-stone-900">STEM1003</h4>
-            <span class="px-2 py-1 bg-stone-200 text-stone-600 font-display text-xs rounded-full">Teaching Assistant</span>
+            <h4 class="font-display font-bold text-lg text-stone-900">Programming Fundamentals (College Prep)</h4>
+            <span class="px-2 py-1 bg-stone-200 text-stone-600 font-display text-xs rounded-full">Tutor</span>
           </div>
           <h5 class="font-semibold text-stone-800 mb-2">Programming Fundamentals</h5>
-          <p class="text-stone-600 text-sm mb-4 leading-relaxed">Introduction to Python programming for beginners</p>
+          <p class="text-stone-600 text-sm mb-4 leading-relaxed">Mentored students on Python basics, problem decomposition, and real-world applications. Integrated AI tools (Copilot, Claude, Cursor) to build computational literacy and independence. Delivered free community lessons and supported peer-learning circles.</p>
           <div class="flex flex-wrap gap-1">
-            <span class="px-2 py-1 bg-amber-100 text-amber-700 font-display text-xs rounded">Fall 2022</span>
-            <span class="px-2 py-1 bg-amber-100 text-amber-700 font-display text-xs rounded">Fall 2023</span>
-            <span class="px-2 py-1 bg-amber-100 text-amber-700 font-display text-xs rounded">Fall 2024</span>
+            <span class="px-2 py-1 bg-stone-100 text-stone-700 font-display text-xs rounded">2020 – Present</span>
           </div>
         </div>
       </div>
     </div>
     
-    <!-- Student Mentoring Section -->
-    <div>
-      <h3 class="font-display font-bold text-sm text-red-500 mb-6 tracking-widest text-center">STUDENT MENTORING</h3>
-      <div class="max-w-3xl mx-auto text-center">
-        <p class="text-stone-600 leading-relaxed">Currently building my mentoring portfolio through hands-on robotics and programming projects with high school students.</p>
-      </div>
-    </div>
+    
   </div>
 </section>
 
@@ -361,6 +286,41 @@
 <script>
 // News toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
+  // Copy-to-clipboard on Email button (uses Clipboard API with fallback)
+  const emailBtn = document.getElementById('email-btn');
+  const emailStatus = document.getElementById('email-copy-status');
+  if (emailBtn) {
+    const emailText = document.getElementById('email-text');
+    emailBtn.addEventListener('click', async function (e) {
+      e.preventDefault();
+      const original = emailText.textContent.trim();
+      const email = emailBtn.getAttribute('data-email') || 'mwazakd@gmail.com';
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = email;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        emailText.textContent = 'Copied!';
+        if (emailStatus) emailStatus.textContent = 'Email copied to clipboard.';
+        setTimeout(() => {
+          emailText.textContent = original;
+          if (emailStatus) emailStatus.textContent = '';
+        }, 1200);
+      } catch (err) {
+        // On failure, fall back to opening mail client
+        window.location.href = emailBtn.getAttribute('href');
+      }
+    });
+  }
   const toggleBtn = document.getElementById('toggle-news-btn');
   const btnText = document.getElementById('btn-text');
   const btnIcon = document.getElementById('btn-icon');

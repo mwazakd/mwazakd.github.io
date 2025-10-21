@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Kudzaishe Mwaza</title>
-  <link rel="stylesheet" href="/assets/css/output.css">
+  <link rel="stylesheet" href="/assets/css/output.css?v=1761050562">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,8 +29,8 @@
       <div class="hidden md:flex items-center space-x-10">
         <a href="/" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">About</a>
         <a href="#research" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Research</a>
-        <a href="#publications" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Publications</a>
         <a href="#teaching" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Teaching</a>
+        <a href="/blog" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Blog</a>
         <a href="#contact" class="hover-underline font-display text-sm font-medium text-stone-700 hover:text-stone-900">Contact</a>
         <button id="theme-toggle" class="ml-4 text-sm border rounded px-2 py-1 border-stone-300 hover:bg-stone-100 transition">🌓</button>
       </div>
@@ -39,34 +39,70 @@
 </header>
 
   <main>
-    <div class="max-w-4xl mx-auto px-4 pt-8 pb-16">
-  <h1 class="text-4xl font-bold mb-8 text-center">Blog</h1>
-  
-  <div class="space-y-8">
+    <main class="max-w-7xl mx-auto px-4 pt-32 pb-8">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Blog</h1>
     
-    <article class="bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition p-6">
-      
-      <img src="/assets/images/blog1.jpg" alt="Welcome to My Blog" class="w-full h-48 object-cover rounded-lg mb-4" />
-      
-      
-      <h2 class="text-2xl font-semibold mb-2">
-        <a href="/2025/09/27/welcome.html" class="hover:text-blue-500 transition">Welcome to My Blog</a>
-      </h2>
-      
-      <p class="text-gray-600 dark:text-gray-300 text-sm mb-3">September 27, 2025</p>
-      
-      <div class="text-gray-700 dark:text-gray-300 mb-4">
-        This is your first post. You can write Markdown content here and attach images.
-
-      </div>
-      
-      <a href="/2025/09/27/welcome.html" class="text-blue-600 hover:underline font-medium">Read more →</a>
-    </article>
-    
-    
+    <p class="text-lg text-gray-600 dark:text-gray-300">Thoughts, insights, and discoveries in science, technology, and education</p>
     
   </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  
+  <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+    
+    <div class="aspect-w-16 aspect-h-9">
+      <img src="/assets/images/blog/tutor5.jpg" alt="From Equations to Empowerment: How Tutoring Sparked My Journey into AI for Education" class="w-full h-48 object-cover" />
+    </div>
+    
+    
+    <div class="p-6">
+      <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+        <time datetime="2025-01-15">
+          January 15, 2025
+        </time>
+        
+        <span>•</span>
+        <span>Education</span>
+        
+      </div>
+      
+      <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2">
+        <a href="/education/ai/personal%20journey/2025/01/15/from-equations-to-empowerment.html" class="hover:text-blue-600 dark:hover:text-blue-400">
+          From Equations to Empowerment: How Tutoring Sparked My Journey into AI for Education
+        </a>
+      </h2>
+      
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+        How tutoring high school students in mathematics sparked my passion for creating AI systems that understand, adapt, a...
+      </p>
+      
+      <div class="flex items-center justify-between">
+        <a href="/education/ai/personal%20journey/2025/01/15/from-equations-to-empowerment.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium text-sm">
+          Read more →
+        </a>
+        
+        
+        <div class="flex gap-1">
+          
+          <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded text-xs">
+            tutoring
+          </span>
+          
+          <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded text-xs">
+            artificial intelligence
+          </span>
+          
+        </div>
+        
+      </div>
+    </div>
+  </article>
+  
 </div>
+
+
+</main>
 
   </main>
   <footer class="py-6 px-8 bg-stone-950 text-stone-400">
