@@ -15,9 +15,10 @@ git push origin main
 
 1. [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
 2. Select **mwazakd/mwazakd.github.io**, branch **main**
-3. Build settings:
+3. Build settings (standard static Pages — **no deploy command**):
    - Build command: `npm run build`
-   - Build output: `dist`
+   - Build output directory: `dist`
+   - Deploy command: **leave empty** (do not use `wrangler deploy`)
    - Environment variable: `NODE_VERSION` = `20`
 4. Deploy → note your URL: `https://kdmwaza-portfolio.pages.dev`
 5. If the URL differs, update `site` in [`astro.config.mjs`](../astro.config.mjs) and push again
