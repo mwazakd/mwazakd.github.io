@@ -19,7 +19,7 @@ git push origin main
    - Build command: `npm run build`
    - Build output: `dist`
    - Environment variable: `NODE_VERSION` = `20`
-4. Deploy → note your URL (likely `https://mwazakd-github-io.pages.dev`)
+4. Deploy → note your URL: `https://kdmwaza-portfolio.pages.dev`
 5. If the URL differs, update `site` in [`astro.config.mjs`](../astro.config.mjs) and push again
 
 ## 3. GitHub OAuth App
@@ -28,7 +28,7 @@ git push origin main
 
 | Field | Value |
 |---|---|
-| Homepage URL | `https://mwazakd-github-io.pages.dev` |
+| Homepage URL | `https://kdmwaza-portfolio.pages.dev` |
 | Callback URL | `https://decap-cms-oauth.<your-subdomain>.workers.dev/callback` |
 
 Save Client ID and Client Secret.
