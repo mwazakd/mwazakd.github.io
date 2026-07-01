@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cell City Lesson</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 20px; max-width: 1000px; margin: 0 auto; }
+        .container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); grid-column: 1 / -1; margin-bottom: 10px; }
+        .subtitle { text-align: center; grid-column: 1 / -1; color: #64748b; margin-bottom: 30px; }
+        svg { width: 100%; height: auto; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+        .organelle { cursor: pointer; transition: all 0.3s ease; opacity: 0.9; }
+        .organelle:hover { opacity: 1; filter: brightness(1.2); transform: scale(1.02); transform-box: fill-box; transform-origin: center; }
+        .label-text { pointer-events: none; font-weight: bold; fill: white; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+        .info-panel { background: #f1f5f9; padding: 25px; border-radius: 15px; border-left: 5px solid var(--primary); }
+        .info-title { font-size: 1.5rem; color: var(--primary); margin-top: 0; }
+        .info-desc { line-height: 1.6; font-size: 1.1rem; }
+        .analogy-box { margin-top: 15px; background: #dbeafe; padding: 15px; border-radius: 10px; color: #1e40af; font-weight: 500; }
+        .mode-switch { grid-column: 1 / -1; display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .btn-learn { background: var(--primary); color: white; }
+        .btn-quiz { background: var(--text); color: white; }
+        .btn-quiz:hover { background: var(--accent); }
+        .feedback { margin-top: 15px; font-weight: bold; padding: 10px; border-radius: 8px; text-align: center; display: none; }
+        .correct { background: #d1fae5; color: #065f46; display: block; }
+        .incorrect { background: #fee2e2; color: #991b1b; display: block; }
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <h1>🔬 The Interactive Cell City</h1>
+    <div class="subtitle">Click on the cell parts to explore their functions!</div>
+    <div class="mode-switch">
+        <button class="btn-learn" onclick="setMode('learn')">📖 Learn Mode</button>
+        <button class="btn-quiz" onclick="setMode('quiz')">🧠 Quiz Mode</button>
+    </div>
+    <div class="container">
+        <div class="cell-visual">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="200" cy="200" r="190" fill="#e2e8f0" stroke="#94a3b8" stroke-width="4" />
+                <circle id="membrane" class="organelle" cx="200" cy="200" r="190" fill="transparent" stroke="#3b82f6" stroke-width="15" onclick="handleInteraction('membrane')" />
+                <g id="nucleus" class="organelle" onclick="handleInteraction('nucleus')">
+                    <circle cx="200" cy="200" r="60" fill="#8b5cf6" />
+                    <circle cx="200" cy="200" r="20" fill="#6d28d9" />
+                    <text x="200" y="205" text-anchor="middle" class="label-text" font-size="14">NUCLEUS</text>
+                </g>
+                <g id="mitochondria" class="organelle" onclick="handleInteraction('mitochondria')">
+                    <ellipse cx="100" cy="120" rx="40" ry="20" fill="#f59e0b" transform="rotate(-30 100 120)" />
+                    <path d="M80,120 Q100,100 120,120" stroke="#b45309" stroke-width="3" fill="none" transform="rotate(-30 100 120)" />
+                </g>
+                <g class="organelle" onclick="handleInteraction('mitochondria')">
+                    <ellipse cx="300" cy="280" rx="40" ry="20" fill="#f59e0b" transform="rotate(-30 300 280)" />
+                    <path d="M280,280 Q300,260 320,280" stroke="#b45309" stroke-width="3" fill="none" transform="rotate(-30 300 280)" />
+                </g>
+                <g id="ribosomes" class="organelle" onclick="handleInteraction('ribosomes')">
+                    <circle cx="150" cy="300" r="8" fill="#ef4444" />
+                    <circle cx="170" cy="320" r="8" fill="#ef4444" />
+                    <circle cx="280" cy="100" r="8" fill="#ef4444" />
+                    <circle cx="320" cy="180" r="8" fill="#ef4444" />
+                </g>
+            </svg>
+        </div>
+        <div class="info-panel" id="display-panel">
+            <h2 class="info-title" id="title">Welcome!</h2>
+            <p class="info-desc" id="desc">Hover over and click any part of the cell to reveal its secrets. We are exploring an <strong>Animal Cell</strong> today.</p>
+            <div class="analogy-box" id="analogy">💡 Tip: Think of the cell as a city.</div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </div>
+    <script>
+        const data = {
+            nucleus: { title: "The Nucleus", desc: "The control center of the cell. It contains the cell's genetic material (DNA) which coordinates cell activities like growth and reproduction.", analogy: "🏙️ Analogy: The City Hall (holds the blueprints)" },
+            mitochondria: { title: "Mitochondria", desc: "The powerhouse of the cell! These sausage-shaped organelles generate most of the cell's supply of adenosine triphosphate (ATP), used as a source of chemical energy.", analogy: "⚡ Analogy: The Power Plant" },
+            membrane: { title: "Cell Membrane", desc: "The thin layer of protein and fat that surrounds the cell. It is semi-permeable, allowing some substances to pass into the cell and blocking others.", analogy: "🚧 Analogy: Border Control / City Walls" },
+            ribosomes: { title: "Ribosomes", desc: "Tiny spherical organelles that make proteins by joining amino acids together. Many are found floating in the cytoplasm or attached to the rough endoplasmic reticulum.", analogy: "🏭 Analogy: The Factories" }
+        };
+        let currentMode = 'learn';
+        let quizTarget = '';
+        function setMode(mode) {
+            currentMode = mode;
+            const feedback = document.getElementById('feedback');
+            feedback.className = 'feedback';
+            if (mode === 'quiz') {
+                const keys = Object.keys(data);
+                quizTarget = keys[Math.floor(Math.random() * keys.length)];
+                document.getElementById('title').innerText = "🧠 Quiz Time!";
+                document.getElementById('desc').innerText = "Can you find the **" + data[quizTarget].analogy.split(': ')[1] + "**?";
+                document.getElementById('analogy').style.display = 'none';
+            } else {
+                document.getElementById('title').innerText = "Interactive Mode";
+                document.getElementById('desc').innerText = "Click on a part to learn more.";
+                document.getElementById('analogy').style.display = 'block';
+                document.getElementById('analogy').innerText = "💡 Click a part to see its City Analogy!";
+            }
+        }
+        function handleInteraction(part) {
+            if (currentMode === 'learn') {
+                const info = data[part];
+                document.getElementById('title').innerText = info.title;
+                document.getElementById('desc').innerText = info.desc;
+                document.getElementById('analogy').innerText = info.analogy;
+                document.getElementById('analogy').style.display = 'block';
+            } else if (currentMode === 'quiz') {
+                const feedback = document.getElementById('feedback');
+                if (part === quizTarget) {
+                    feedback.innerText = "✅ Correct! That is the " + data[part].title + ".";
+                    feedback.className = "feedback correct";
+                    setTimeout(() => setMode('quiz'), 2000);
+                } else {
+                    feedback.innerText = "❌ Try again! You clicked the " + data[part].title + ".";
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

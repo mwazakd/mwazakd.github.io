@@ -1,0 +1,94 @@
+# Local Decap CMS config (used on localhost only — see public/admin/index.html)
+
+backend:
+  name: github
+  repo: mwazakd/mwazakd.github.io
+  branch: main
+
+media_folder: public/assets/images
+public_folder: /assets/images
+
+local_backend: true
+
+collections:
+  - name: news
+    label: News
+    folder: src/content/news
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Link, name: link, widget: string, required: false }
+
+  - name: projects
+    label: Projects
+    folder: src/content/projects
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Tags, name: tags, widget: list }
+      - { label: Image, name: image, widget: image }
+      - { label: Live URL, name: liveUrl, widget: string, required: false }
+      - { label: Source URL, name: sourceUrl, widget: string, required: false }
+      - label: Status
+        name: status
+        widget: select
+        options: [idea, in-progress, complete]
+        default: complete
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: blog
+    label: Blog
+    folder: src/content/blog
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - label: Category
+        name: category
+        widget: select
+        options: [tutorials, cloud, system-design, devops, robotics, general]
+      - { label: Tags, name: tags, widget: list, default: [] }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: papers
+    label: Papers
+    folder: src/content/papers
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Authors, name: authors, widget: list }
+      - { label: URL, name: url, widget: string, required: false }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Key Takeaways, name: takeaways, widget: list, default: [] }
+      - { label: Tags, name: tags, widget: list, default: [] }
+      - { label: Date Read, name: dateRead, widget: datetime }
+      - { label: Notes, name: body, widget: markdown, required: false }
+
+  - name: site
+    label: Site Settings
+    files:
+      - label: Site Configuration
+        name: site
+        file: src/content/config/site.json
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Short Name, name: shortName, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Photo, name: photo, widget: image }
+          - { label: Bio Paragraphs, name: bio, widget: list }
+          - { label: Email, name: email, widget: string }
+          - { label: GitHub, name: github, widget: string }
+          - { label: LinkedIn, name: linkedin, widget: string }
+          - { label: CV URL, name: cvUrl, widget: string }
+          - { label: Current Focus, name: currentFocus, widget: list }

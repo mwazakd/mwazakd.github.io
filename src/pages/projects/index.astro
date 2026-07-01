@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => {
+  const statusOrder = { 'in-progress': 0, idea: 1, complete: 2 };
+  return statusOrder[a.data.status] - statusOrder[b.data.status];
+});
+---
+
+<BaseLayout title="Projects" description="Projects in cloud, educational technology, robotics, and open source.">
+  <Section title="Projects">
+    <p class="max-w-3xl mx-auto text-center text-slate-400 mb-12">
+      A collection of my work spanning environmental monitoring, educational technology, and software development.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {projects.map((project) => (
+        <ProjectCard project={project} slug={project.id} />
+      ))}
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,81 +1,86 @@
-# Personal Webpage
+# Personal Knowledge Hub
 
-A modern, responsive personal webpage built with React, TypeScript, and Tailwind CSS showcasing projects, research interests, teaching experience, and contact information.
+A content-driven professional site built with **Astro**, **Decap CMS**, and deployed on **Cloudflare Pages**. Edit news, projects, blog posts, and research notes from your phone at `/admin`.
 
 ## Features
 
-- 🎨 Modern, responsive design with Tailwind CSS
-- ⚛️ Built with React 19 and TypeScript
-- 🚀 Fast development with Vite
-- 📱 Mobile-friendly interface
-- 🌐 Deployed on GitHub Pages
+- Rich homepage with latest news, featured project, featured article, and current focus
+- Multi-page sections: Projects, Research, Blog, About, Resume
+- Git-based content management via Decap CMS
+- Mobile-friendly editing workflow
+- Dark slate/sky design with Tailwind CSS
 
 ## Local Development
 
-**Prerequisites:** Node.js 18+ and npm
+**Prerequisites:** Node.js 20+ and npm
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+npm run dev
+```
 
-2. Run the development server:
-   ```bash
-   npm run dev
-   ```
+Open [http://localhost:4321](http://localhost:4321).
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+### CMS local editing
 
-## Build for Production
+```bash
+npx decap-server
+```
+
+Then visit [http://localhost:4321/admin](http://localhost:4321/admin) with `local_backend: true` enabled in `public/admin/config.yml`.
+
+## Build
 
 ```bash
 npm run build
+npm run preview
 ```
-
-The built files will be in the `dist` directory.
-
-## Deployment
-
-This project is configured to deploy automatically to GitHub Pages via GitHub Actions.
-
-### Automatic Deployment
-
-1. Push your code to the `main` branch
-2. GitHub Actions will automatically build and deploy to GitHub Pages
-3. Your site will be available at `https://mwazakd.github.io`
-
-### Manual Deployment
-
-If you need to deploy manually:
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Push the `dist` folder contents to the `gh-pages` branch (or configure GitHub Pages to use the `dist` folder from the main branch)
 
 ## Project Structure
 
 ```
-├── components/          # React components
-├── public/              # Static assets
-│   └── assets/         # Images and PDFs
-├── .github/
-│   └── workflows/      # GitHub Actions workflows
-├── index.html          # HTML entry point
-├── index.tsx           # React entry point
-├── vite.config.ts      # Vite configuration
-└── package.json        # Dependencies and scripts
+src/
+├── content/           # Markdown content (CMS-managed)
+│   ├── news/
+│   ├── projects/
+│   ├── blog/
+│   ├── papers/
+│   └── config/site.json
+├── components/        # Astro + React islands
+├── layouts/
+└── pages/
+public/
+├── admin/             # Decap CMS
+└── assets/images/     # Uploaded images
+workers/oauth/         # GitHub OAuth for CMS on Cloudflare
 ```
 
-## Technologies Used
+## Deployment (Cloudflare Pages)
 
-- **React 19** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **Tailwind CSS** - Styling (via CDN)
+See **[docs/GO_LIVE.md](docs/GO_LIVE.md)** for the full checklist.
+
+Quick summary:
+
+1. Push to `mwazakd/mwazakd.github.io` on GitHub
+2. Connect repo in [Cloudflare Pages](https://dash.cloudflare.com/) (build: `npm run build`, output: `dist`)
+3. Deploy OAuth worker from `workers/oauth/` for CMS auth
+4. Visit `/admin` on your production URL to edit content from your phone
+
+## Adding Assets
+
+Place these files in `public/assets/`:
+
+- `images/tutor5.jpg` — profile photo
+- `images/water-quality-monitoring.png`
+- `images/titration-simulator.png`
+- `mwazakd_cv.pdf` — resume PDF
+
+Images can also be uploaded via Decap CMS.
+
+## Standalone Demos
+
+- [Interactive Cell City Lesson](/cells.html) — biology education demo
 
 ## License
 
-This project is private and personal.
+Private and personal.

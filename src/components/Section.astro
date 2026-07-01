@@ -1,0 +1,15 @@
+---
+interface Props {
+  id?: string;
+  title: string;
+  class?: string;
+}
+
+const { id, title, class: className = '' } = Astro.props;
+---
+
+<section id={id} class:list={['py-16 md:py-24 animate-fade-in-up', className]} style="animation-delay: 200ms; opacity: 0;">
+  <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 text-slate-100">{title}</h2>
+  <div class="w-24 h-1 bg-sky-500 mx-auto mb-12"></div>
+  <slot />
+</section>

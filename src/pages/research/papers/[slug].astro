@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { getPapers } from '../../../lib/content';
+import { formatDate } from '../../../lib/site';
+
+export async function getStaticPaths() {
+  const papers = await getPapers();
+  return papers.map((paper) => ({
+    params: { slug: paper.id },
+    props: { paper },
+  }));
+}
+
+const { paper } = Astro.props;
+const { Content } = await render(paper);
+---
+
+<BaseLayout title={paper.data.title} description={paper.data.summary}>
+  <article class="max-w-3xl mx-auto py-8">
+    <a href="/research" class="text-sky-400 hover:text-sky-300 text-sm mb-6 inline-block">← Back to Research</a>
+    <h1 class="text-3xl font-bold text-white mb-2">{paper.data.title}</h1>
+    <p class="text-slate-500 mb-2">{paper.data.authors.join(', ')}</p>
+    <p class="text-slate-500 text-sm mb-6">Read {formatDate(paper.data.dateRead)}</p>
+    {paper.data.url && (
+      <a href={paper.data.url} target="_blank" rel="noopener noreferrer" class="inline-block text-sky-400 hover:text-sky-300 mb-8">View paper →</a>
+    )}
+    <p class="text-lg text-slate-300 mb-8">{paper.data.summary}</p>
+    {paper.data.takeaways.length > 0 && (
+      <div class="mb-8">
+        <h2 class="text-xl font-bold text-white mb-4">Key Takeaways</h2>
+        <ul class="space-y-2">
+          {paper.data.takeaways.map((t) => (
+            <li class="flex items-start gap-2 text-slate-300">
+              <span class="text-sky-400">•</span>
+              {t}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+    <div class="prose prose-invert prose-sky max-w-none">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

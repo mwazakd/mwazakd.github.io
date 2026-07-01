@@ -1,0 +1,8 @@
+name = "decap-cms-oauth"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Set GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET via:
+# wrangler secret put GITHUB_CLIENT_ID
+# wrangler secret put GITHUB_CLIENT_SECRET

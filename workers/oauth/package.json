@@ -1,0 +1,11 @@
+{
+  "name": "decap-cms-oauth",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.106.0"
+  }
+}

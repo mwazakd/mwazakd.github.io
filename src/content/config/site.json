@@ -1,0 +1,80 @@
+{
+  "name": "Kudzaishe Mwaza",
+  "shortName": "Kudzaishe D Mwaza",
+  "tagline": "STEM Educator & Tech Enthusiast",
+  "photo": "/assets/images/tutor5.jpg",
+  "bio": [
+    "I'm a tech enthusiast passionate about the intersection of education, robotics, and artificial intelligence. Currently, I teach STEM subjects to high school students, helping them build strong conceptual foundations and curiosity-driven thinking.",
+    "My journey in Mechatronics Engineering sparked a deep interest in how intelligent systems can solve real-world problems — from autonomous robots to AI-driven learning tools. I enjoy bridging complex technical ideas with accessible explanations that empower others to learn and create."
+  ],
+  "email": "mwazakd@gmail.com",
+  "github": "https://github.com/mwazakd",
+  "linkedin": "https://www.linkedin.com/in/kudzaishe-mwaza-3630a42a2",
+  "cvUrl": "/assets/mwazakd_cv.pdf",
+  "currentFocus": [
+    "Preparing graduate school applications",
+    "Building cloud architecture and DevOps skills",
+    "Developing educational technology projects",
+    "Reading papers on human-centered AI and educational robotics"
+  ],
+  "researchInterests": [
+    {
+      "title": "Educational Robotics",
+      "description": "Developing accessible robotics platforms for STEM education in underserved communities."
+    },
+    {
+      "title": "AI for Low-Resource and Socially Grounded Applications",
+      "description": "Building adaptive AI systems that serve diverse communities and environments."
+    },
+    {
+      "title": "Human-Centered AI",
+      "description": "Building AI systems that enhance human capabilities and promote accessibility."
+    }
+  ],
+  "teaching": [
+    {
+      "title": "Physics",
+      "subtitle": "Mechanics • Electricity & Magnetism • Waves",
+      "description": "Tutored 100+ students; built conceptual foundations with problem-solving drills and exam prep. Integrated real-world contexts and lab-style reasoning to strengthen intuition.",
+      "period": "2020 – Present"
+    },
+    {
+      "title": "Mathematics",
+      "subtitle": "Algebra • Calculus • Problem Solving",
+      "description": "Designed individualized plans; emphasized conceptual understanding and exam strategy. Encouraged active learning and mathematical confidence through guided discovery, discussion, and adaptive feedback.",
+      "period": "2020 – Present"
+    },
+    {
+      "title": "Programming Fundamentals (College Prep)",
+      "subtitle": "Programming Fundamentals",
+      "description": "Mentored students on Python basics, problem decomposition, and real-world applications. Integrated AI tools (Copilot, Claude, Cursor) to build computational literacy and independence. Delivered free community lessons and supported peer-learning circles.",
+      "period": "2020 – Present"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Programming & Languages",
+      "skills": ["Python", "C++"]
+    },
+    {
+      "title": "Machine Learning & Data Science",
+      "skills": ["Data Preprocessing", "Model Training & Evaluation", "Anomaly Detection", "Remote Sensing Analysis"]
+    },
+    {
+      "title": "Cloud & Platforms",
+      "skills": ["Google Earth Engine", "AWS DeepRacer", "Google Colab"]
+    },
+    {
+      "title": "Development Tools",
+      "skills": ["Jupyter Notebook", "VS Code", "Cursor", "Git/GitHub"]
+    },
+    {
+      "title": "Technical Skills",
+      "skills": ["Web Technologies", "API Integration", "Automation Scripting", "Cloud-based Data Pipelines"]
+    },
+    {
+      "title": "Operating Systems",
+      "skills": ["Windows", "Linux (Ubuntu)"]
+    }
+  ]
+}

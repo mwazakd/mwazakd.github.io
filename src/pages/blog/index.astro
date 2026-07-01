@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import { getCollection } from 'astro:content';
+import { formatDateShort } from '../../lib/site';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const categories = [...new Set(posts.map((p) => p.data.category))];
+---
+
+<BaseLayout title="Blog" description="Technical articles on cloud, system design, DevOps, robotics, and more.">
+  <Section title="Blog">
+    <p class="max-w-3xl mx-auto text-center text-slate-400 mb-12">
+      Tutorials, technical writing, and notes on the topics I&apos;m learning and building with.
+    </p>
+
+    {categories.length > 1 && (
+      <div class="flex flex-wrap justify-center gap-2 mb-12">
+        {categories.map((cat) => (
+          <span class="px-3 py-1 text-xs font-semibold rounded-full bg-slate-800 text-sky-300 capitalize">{cat.replace('-', ' ')}</span>
+        ))}
+      </div>
+    )}
+
+    <div class="max-w-3xl mx-auto space-y-6">
+      {posts.map((post) => (
+        <article class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-sky-500/50 transition-colors">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="text-xs font-semibold text-sky-400 uppercase">{post.data.category.replace('-', ' ')}</span>
+            <span class="text-slate-600">·</span>
+            <span class="text-slate-500 text-sm">{formatDateShort(post.data.date)}</span>
+          </div>
+          <h2 class="text-xl font-bold text-white mb-2">
+            <a href={`/blog/${post.id}`} class="hover:text-sky-400 transition-colors">{post.data.title}</a>
+          </h2>
+          {post.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-3">
+              {post.data.tags.map((tag) => (
+                <span class="text-xs bg-slate-700 text-slate-400 px-2 py-1 rounded">{tag}</span>
+              ))}
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </Section>
+</BaseLayout>
