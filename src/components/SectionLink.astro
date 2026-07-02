@@ -1,0 +1,12 @@
+---
+interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<div class="mt-8 text-center">
+  <a href={href} class="text-sky-400 hover:text-sky-300 font-medium transition-colors">{label} →</a>
+</div>

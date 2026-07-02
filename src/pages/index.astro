@@ -7,6 +7,7 @@ import ArticleCard from '../components/ArticleCard.astro';
 import ResearchSection from '../components/ResearchSection.astro';
 import TeachingSection from '../components/TeachingSection.astro';
 import SkillsSection from '../components/SkillsSection.astro';
+import SectionLink from '../components/SectionLink.astro';
 import { getCollection } from 'astro:content';
 import { getSiteConfig, formatDateShort } from '../lib/site';
 import {
@@ -40,6 +41,7 @@ const homepageArticles = allBlog
 
   <Section title="Research">
     <ResearchSection />
+    <SectionLink href="/research" label="View Research" />
   </Section>
 
   <Section title="Teaching & Mentoring">
@@ -54,11 +56,7 @@ const homepageArticles = allBlog
         </div>
       ))}
     </div>
-    {allProjects.length > HOMEPAGE_DESKTOP_LIMIT && (
-      <div class="mt-8 text-center">
-        <a href="/projects" class="text-sky-400 hover:text-sky-300 font-medium">View all projects →</a>
-      </div>
-    )}
+    <SectionLink href="/projects" label="View Projects" />
   </Section>
 
   {homepageArticles.length > 0 && (
@@ -70,11 +68,7 @@ const homepageArticles = allBlog
           </div>
         ))}
       </div>
-      {allBlog.length > HOMEPAGE_DESKTOP_LIMIT && (
-        <div class="mt-8 text-center">
-          <a href="/blog" class="text-sky-400 hover:text-sky-300 font-medium">View all articles →</a>
-        </div>
-      )}
+      <SectionLink href="/blog" label="Read more Articles" />
     </Section>
   )}
 
@@ -100,6 +94,7 @@ const homepageArticles = allBlog
         ))}
       </ul>
     </div>
+    <SectionLink href="/news" label="More news" />
   </Section>
 
   <Section title="About">

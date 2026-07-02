@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import { getCollection } from 'astro:content';
+import { formatDateShort } from '../../lib/site';
+
+const allNews = (await getCollection('news')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout title="News" description="Updates, milestones, and announcements.">
+  <Section title="News">
+    <p class="max-w-3xl mx-auto text-center text-slate-400 mb-12">
+      Milestones, updates, and what I&apos;m working on.
+    </p>
+
+    <div class="max-w-2xl mx-auto bg-slate-800/50 p-6 rounded-lg border-2 border-slate-700 shadow-lg">
+      <h3 class="font-bold text-sm mb-6 text-red-500 tracking-widest">ALL UPDATES</h3>
+      <ul class="space-y-4">
+        {allNews.map((item) => (
+          <li class="flex gap-4 pb-4 border-b border-slate-700 last:border-0">
+            <span class="text-slate-500 font-mono text-xs whitespace-nowrap pt-1">{formatDateShort(item.data.date)}</span>
+            <div>
+              {item.data.link ? (
+                <a href={item.data.link} class="text-slate-300 text-base hover:text-sky-400 transition-colors">{item.data.summary}</a>
+              ) : (
+                <p class="text-slate-300 text-base">{item.data.summary}</p>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+</BaseLayout>
