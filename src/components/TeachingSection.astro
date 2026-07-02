@@ -1,0 +1,22 @@
+---
+import { getSiteConfig } from '../lib/site';
+
+const site = getSiteConfig();
+---
+
+<div class="max-w-6xl mx-auto">
+  <h3 class="text-center text-sm font-bold text-red-500 mb-8 tracking-widest">STEM TUTOR</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {site.teaching.map((subject) => (
+      <div class="bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-sky-500 hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300 transform hover:-translate-y-2">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="text-lg font-bold text-slate-100">{subject.title}</h3>
+          <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded-full">Tutor</span>
+        </div>
+        <h4 class="font-semibold text-slate-300 mb-2 text-sm">{subject.subtitle}</h4>
+        <p class="text-slate-400 text-sm mb-4 leading-relaxed">{subject.description}</p>
+        <span class="px-2 py-1 bg-sky-500/20 text-sky-300 text-xs rounded">{subject.period}</span>
+      </div>
+    ))}
+  </div>
+</div>

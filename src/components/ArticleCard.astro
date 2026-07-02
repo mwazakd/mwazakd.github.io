@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  slug?: string;
+}
+
+const { post, slug } = Astro.props;
+const href = slug ? `/blog/${slug}` : undefined;
+const image = post.data.image ?? `https://picsum.photos/seed/${post.id}/600/400`;
+const summary = post.data.summary ?? 'Read the full article for more details.';
+---
+
+<div class="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300 transform hover:-translate-y-2 group h-full flex flex-col">
+  <a href={href} class:list={[!href && 'pointer-events-none']}>
+    <div class="relative overflow-hidden">
+      <img src={image} alt={post.data.title} class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" />
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+      <span class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded-full bg-slate-900/80 text-sky-300 capitalize">
+        {post.data.category.replace('-', ' ')}
+      </span>
+    </div>
+  </a>
+  <div class="p-6 flex flex-col flex-grow">
+    {href ? (
+      <a href={href} class="text-xl font-bold text-white mb-2 hover:text-sky-400 transition-colors">{post.data.title}</a>
+    ) : (
+      <h3 class="text-xl font-bold text-white mb-2">{post.data.title}</h3>
+    )}
+    <p class="text-slate-400 mb-4 text-sm flex-grow">{summary}</p>
+    <div class="flex flex-wrap gap-2 mb-4">
+      {post.data.tags.map((tag) => (
+        <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-3 py-1 rounded-full">{tag}</span>
+      ))}
+    </div>
+    {href && (
+      <div class="mt-auto">
+        <a href={href} class="text-sky-400 hover:text-sky-300 font-medium text-sm transition-colors">Read more</a>
+      </div>
+    )}
+  </div>
+</div>

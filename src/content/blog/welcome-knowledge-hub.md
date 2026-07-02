@@ -2,6 +2,8 @@
 title: Welcome to My Knowledge Hub
 date: 2025-09-20
 category: general
+summary: This site is evolving from a static portfolio into a professional knowledge hub — a living record of projects, research notes, and technical writing.
+image: /assets/images/tutor5.jpg
 tags:
   - announcement
   - personal

@@ -4,6 +4,6 @@ import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-  site: 'https://kdmwaza-portfolio.pages.dev',
+  site: 'https://mwazakd-github-io.pages.dev',
   integrations: [tailwind(), react(), mdx()],
 });

@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
+import ResearchSection from '../components/ResearchSection.astro';
+import TeachingSection from '../components/TeachingSection.astro';
+import SkillsSection from '../components/SkillsSection.astro';
 import ContactForm from '../components/ContactForm';
 import { getSiteConfig } from '../lib/site';
 
@@ -17,51 +20,15 @@ const site = getSiteConfig();
   </Section>
 
   <Section title="Research Interests">
-    <p class="max-w-3xl mx-auto text-center text-slate-400 mb-12">
-      These areas reflect my current research interests and the directions I hope to explore in developing AI that is inclusive, data-efficient, and grounded in real-world contexts.
-    </p>
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {site.researchInterests.map((interest) => (
-        <div class="bg-slate-800 p-6 rounded-lg shadow-lg flex flex-col h-full hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-slate-700 hover:border-sky-500">
-          <h3 class="text-xl font-bold mb-3 text-slate-100">{interest.title}</h3>
-          <p class="text-slate-400 leading-relaxed">{interest.description}</p>
-        </div>
-      ))}
-    </div>
+    <ResearchSection />
   </Section>
 
   <Section title="Teaching & Mentoring">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-center text-sm font-bold text-red-500 mb-8 tracking-widest">STEM TUTOR</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {site.teaching.map((subject) => (
-          <div class="bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-sky-500 hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300 transform hover:-translate-y-2">
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="text-lg font-bold text-slate-100">{subject.title}</h3>
-              <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded-full">Tutor</span>
-            </div>
-            <h4 class="font-semibold text-slate-300 mb-2 text-sm">{subject.subtitle}</h4>
-            <p class="text-slate-400 text-sm mb-4 leading-relaxed">{subject.description}</p>
-            <span class="px-2 py-1 bg-sky-500/20 text-sky-300 text-xs rounded">{subject.period}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <TeachingSection />
   </Section>
 
   <Section title="Skills">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {site.skills.map((category) => (
-        <div class="bg-slate-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-100 mb-4 border-b border-slate-700 pb-2">{category.title}</h3>
-          <div class="flex flex-wrap gap-2">
-            {category.skills.map((skill) => (
-              <span class="px-3 py-1.5 bg-slate-700 text-slate-200 text-sm rounded-md hover:bg-sky-500 hover:text-white transition-colors duration-200">{skill}</span>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
+    <SkillsSection />
   </Section>
 
   <Section title="Get in Touch">
