@@ -9,8 +9,9 @@ tags:
   - Education
 image: https://picsum.photos/seed/edusystem/600/400
 video: /assets/videos/edusystem-tracker.mp4
+liveUrl: https://edusystem-tracker.pages.dev/
 status: complete
 featured: true
 ---
 
-EduSystem Tracker helps Zimbabwean tutors run their teaching practice more professionally. Tutors can enroll and manage students, record fee payments, generate receipts, follow up on balances, and review income — with local-first storage suitable for mobile use. Source code is private; the video demo shows the core workflow.
+EduSystem Tracker helps Zimbabwean tutors run their teaching practice more professionally. Tutors can enroll and manage students, record fee payments, generate receipts, follow up on balances, and review income — with local-first storage suitable for mobile use. Source code is private; try the live demo or watch the video walkthrough.
