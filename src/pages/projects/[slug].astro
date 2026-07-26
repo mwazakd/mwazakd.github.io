@@ -18,7 +18,45 @@ const statusLabel = project.data.status.replace('-', ' ');
 <BaseLayout title={project.data.title} description={project.data.description}>
   <article class="max-w-4xl mx-auto py-8">
     <a href="/projects" class="text-sky-400 hover:text-sky-300 text-sm mb-6 inline-block">← Back to Projects</a>
-    <img src={project.data.image} alt={project.data.title} class="w-full h-64 md:h-80 object-cover rounded-lg mb-8" />
+    {project.data.video ? (
+      <video
+        data-autoplay-on-scroll
+        class="w-full h-64 md:h-80 object-cover rounded-lg mb-8"
+        src={project.data.video}
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label={`${project.data.title} preview`}
+      ></video>
+    ) : (
+      <img src={project.data.image} alt={project.data.title} class="w-full h-64 md:h-80 object-cover rounded-lg mb-8" />
+    )}
+    <script>
+      function setupAutoplayOnScroll() {
+        const videos = document.querySelectorAll('video[data-autoplay-on-scroll]');
+        if (!videos.length || !('IntersectionObserver' in window)) return;
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              const video = entry.target;
+              if (!(video instanceof HTMLVideoElement)) continue;
+              if (entry.isIntersecting) void video.play().catch(() => {});
+              else video.pause();
+            }
+          },
+          { threshold: 0.45 }
+        );
+        videos.forEach((video) => {
+          if (!(video instanceof HTMLVideoElement)) return;
+          if (video.dataset.observed === 'true') return;
+          video.dataset.observed = 'true';
+          observer.observe(video);
+        });
+      }
+      setupAutoplayOnScroll();
+      document.addEventListener('astro:page-load', setupAutoplayOnScroll);
+    </script>
     <div class="flex flex-wrap gap-2 mb-4">
       <span class="px-3 py-1 text-xs font-semibold rounded-full bg-slate-800 text-sky-300 capitalize">{statusLabel}</span>
       {project.data.tags.map((tag) => (

@@ -8,13 +8,27 @@ interface Props {
 
 const { project, slug } = Astro.props;
 const href = slug ? `/projects/${slug}` : undefined;
+const hasVideo = Boolean(project.data.video);
 ---
 
 <div class="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300 transform hover:-translate-y-2 group h-full flex flex-col">
   <a href={href} class:list={[!href && 'pointer-events-none']}>
     <div class="relative overflow-hidden">
-      <img src={project.data.image} alt={project.data.title} class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" />
-      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+      {hasVideo ? (
+        <video
+          data-autoplay-on-scroll
+          class="w-full h-56 object-cover"
+          src={project.data.video}
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label={`${project.data.title} preview`}
+        ></video>
+      ) : (
+        <img src={project.data.image} alt={project.data.title} class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" />
+      )}
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 pointer-events-none"></div>
       {project.data.status !== 'complete' && (
         <span class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded-full bg-slate-900/80 text-sky-300 capitalize">
           {project.data.status.replace('-', ' ')}
@@ -50,3 +64,33 @@ const href = slug ? `/projects/${slug}` : undefined;
     </div>
   </div>
 </div>
+
+<script>
+  function setupAutoplayOnScroll() {
+    const videos = document.querySelectorAll<HTMLVideoElement>('video[data-autoplay-on-scroll]');
+    if (!videos.length || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            void video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }
+      },
+      { threshold: 0.45 }
+    );
+
+    videos.forEach((video) => {
+      if (video.dataset.observed === 'true') return;
+      video.dataset.observed = 'true';
+      observer.observe(video);
+    });
+  }
+
+  setupAutoplayOnScroll();
+  document.addEventListener('astro:page-load', setupAutoplayOnScroll);
+</script>

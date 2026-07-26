@@ -19,6 +19,7 @@ const projects = defineCollection({
     description: z.string(),
     tags: z.array(z.string()),
     image: z.string(),
+    video: z.string().optional(),
     liveUrl: z.string().optional(),
     sourceUrl: z.string().optional(),
     status: z.enum(['idea', 'in-progress', 'complete']).default('complete'),
