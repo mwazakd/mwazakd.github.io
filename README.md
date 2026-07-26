@@ -62,9 +62,11 @@ See **[docs/GO_LIVE.md](docs/GO_LIVE.md)** for the full checklist.
 Quick summary:
 
 1. Push to `mwazakd/mwazakd.github.io` on GitHub
-2. Connect repo in [Cloudflare Pages](https://dash.cloudflare.com/) (build: `npm run build`, output: `dist`)
+2. Deploy to Cloudflare Pages project **`mwazakd-github-io`** → https://mwazakd-github-io.pages.dev
 3. Deploy OAuth worker from `workers/oauth/` for CMS auth
 4. Visit `/admin` on your production URL to edit content from your phone
+
+Professional portfolio (separate repo): https://kdmwaza-portfolio.pages.dev
 
 ## Adding Assets
 

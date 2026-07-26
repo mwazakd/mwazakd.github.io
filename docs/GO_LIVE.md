@@ -15,13 +15,14 @@ git push origin main
 
 1. [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
 2. Select **mwazakd/mwazakd.github.io**, branch **main**
-3. Build settings (standard static Pages — **no deploy command**):
+3. Build settings:
    - Build command: `npm run build`
-   - Build output directory: `dist`
-   - Deploy command: **leave empty** (do not use `wrangler deploy`)
+   - Build output: `dist`
    - Environment variable: `NODE_VERSION` = `20`
-4. Deploy → note your URL: `https://kdmwaza-portfolio.pages.dev`
+4. Deploy → note your URL: `https://mwazakd-github-io.pages.dev`
 5. If the URL differs, update `site` in [`astro.config.mjs`](../astro.config.mjs) and push again
+
+> Professional portfolio is a **separate** repo/project: `kdmwaza-portfolio.pages.dev`.
 
 ## 3. GitHub OAuth App
 
@@ -29,7 +30,7 @@ git push origin main
 
 | Field | Value |
 |---|---|
-| Homepage URL | `https://kdmwaza-portfolio.pages.dev` |
+| Homepage URL | `https://mwazakd-github-io.pages.dev` |
 | Callback URL | `https://decap-cms-oauth.<your-subdomain>.workers.dev/callback` |
 
 Save Client ID and Client Secret.
