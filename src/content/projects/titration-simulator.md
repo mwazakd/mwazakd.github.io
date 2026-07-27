@@ -7,6 +7,7 @@ tags:
   - Chemistry Education
   - WebGL
 image: /assets/images/titration-simulator.png
+video: /assets/videos/titration-lab.mp4
 liveUrl: https://mwazakd.github.io/STEMAppDev/
 sourceUrl: https://github.com/mwazakd/STEMAppDev
 status: complete
