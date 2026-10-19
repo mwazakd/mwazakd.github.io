@@ -1,0 +1,142 @@
+---
+import type { TeachingGalleryImage } from '../data/teachingGallery';
+import { teachingGalleryImages } from '../data/teachingGallery';
+
+interface Props {
+  images?: TeachingGalleryImage[];
+  galleryId?: string;
+  intro?: string;
+}
+
+const {
+  images = teachingGalleryImages,
+  galleryId = 'teaching-gallery',
+  intro = 'Snapshots from tutoring physics, mathematics, and programming — supporting Zimbabwean learners with exam prep, conceptual foundations, and hands-on STEM mentoring.',
+} = Astro.props;
+---
+
+<div class="max-w-6xl mx-auto" data-teaching-gallery={galleryId}>
+  <p class="text-center text-slate-400 mb-8 max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+    {intro}
+  </p>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+    {images.map((image, index) => (
+      <button
+        type="button"
+        class="group relative overflow-hidden rounded-lg bg-slate-800 ring-1 ring-slate-700/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+        data-gallery-open
+        data-index={index}
+        aria-label={`View photo ${index + 1}: ${image.alt}`}
+      >
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+          decoding="async"
+          class="w-full h-36 sm:h-40 md:h-44 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <span class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors pointer-events-none"></span>
+      </button>
+    ))}
+  </div>
+</div>
+
+<div
+  class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-slate-950/90 backdrop-blur-sm"
+  data-gallery-modal={galleryId}
+  role="dialog"
+  aria-modal="true"
+  aria-label="Teaching photo gallery"
+>
+  <button
+    type="button"
+    class="absolute top-4 right-4 text-slate-300 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors"
+    data-gallery-close
+    aria-label="Close gallery"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 6L6 18M6 6l12 12" />
+    </svg>
+  </button>
+  <button
+    type="button"
+    class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-slate-300 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors"
+    data-gallery-prev
+    aria-label="Previous photo"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6" />
+    </svg>
+  </button>
+  <button
+    type="button"
+    class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-slate-300 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors"
+    data-gallery-next
+    aria-label="Next photo"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 18 15 12 9 6" />
+    </svg>
+  </button>
+  <figure class="max-w-5xl w-full">
+    <img data-gallery-image class="w-full max-h-[80vh] object-contain rounded-lg shadow-2xl mx-auto" src="" alt="" />
+    <figcaption data-gallery-caption class="text-center text-slate-400 text-sm mt-4 px-4"></figcaption>
+  </figure>
+</div>
+
+<script define:vars={{ galleryId, galleryImages: images }}>
+  function initTeachingGalleries() {
+    const root = document.querySelector(`[data-teaching-gallery="${galleryId}"]`);
+    const modal = document.querySelector(`[data-gallery-modal="${galleryId}"]`);
+    if (!root || !modal) return;
+
+    const imgEl = modal.querySelector('[data-gallery-image]');
+    const captionEl = modal.querySelector('[data-gallery-caption]');
+    let current = 0;
+
+    const show = (index) => {
+      current = (index + galleryImages.length) % galleryImages.length;
+      const item = galleryImages[current];
+      if (!(imgEl instanceof HTMLImageElement) || !(captionEl instanceof HTMLElement)) return;
+      imgEl.src = item.src;
+      imgEl.alt = item.alt;
+      captionEl.textContent = `${current + 1} / ${galleryImages.length} — ${item.alt}`;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const hide = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+
+    root.querySelectorAll('[data-gallery-open]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const index = Number(btn.getAttribute('data-index') ?? '0');
+        show(index);
+      });
+    });
+
+    modal.querySelector('[data-gallery-close]')?.addEventListener('click', hide);
+    modal.querySelector('[data-gallery-prev]')?.addEventListener('click', () => show(current - 1));
+    modal.querySelector('[data-gallery-next]')?.addEventListener('click', () => show(current + 1));
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) hide();
+    });
+
+    const onKeyDown = (event) => {
+      if (modal.classList.contains('hidden')) return;
+      if (event.key === 'Escape') hide();
+      if (event.key === 'ArrowLeft') show(current - 1);
+      if (event.key === 'ArrowRight') show(current + 1);
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+  }
+
+  initTeachingGalleries();
+  document.addEventListener('astro:page-load', initTeachingGalleries);
+</script>

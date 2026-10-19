@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import ResearchSection from '../components/ResearchSection.astro';
 import TeachingSection from '../components/TeachingSection.astro';
+import TeachingGallery from '../components/TeachingGallery.astro';
+import SectionLink from '../components/SectionLink.astro';
+import { teachingGalleryImages } from '../data/teachingGallery';
 import SkillsSection from '../components/SkillsSection.astro';
 import ContactForm from '../components/ContactForm';
 import { getSiteConfig } from '../lib/site';
@@ -25,6 +28,14 @@ const site = getSiteConfig();
 
   <Section title="Teaching & Mentoring">
     <TeachingSection />
+    <div class="mt-14">
+      <TeachingGallery
+        galleryId="teaching-gallery-about"
+        images={teachingGalleryImages.slice(0, 6)}
+        intro="Highlights from STEM tutoring sessions with students across physics, mathematics, and programming."
+      />
+    </div>
+    <SectionLink href="/teaching" label="View full teaching gallery" />
   </Section>
 
   <Section title="Skills">

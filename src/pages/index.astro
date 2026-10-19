@@ -6,6 +6,8 @@ import ProjectCard from '../components/ProjectCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import ResearchSection from '../components/ResearchSection.astro';
 import TeachingSection from '../components/TeachingSection.astro';
+import TeachingGallery from '../components/TeachingGallery.astro';
+import { teachingGalleryImages } from '../data/teachingGallery';
 import SkillsSection from '../components/SkillsSection.astro';
 import SectionLink from '../components/SectionLink.astro';
 import { getCollection } from 'astro:content';
@@ -46,6 +48,14 @@ const homepageArticles = allBlog
 
   <Section title="Teaching & Mentoring">
     <TeachingSection />
+    <div class="mt-14">
+      <TeachingGallery
+        galleryId="teaching-gallery-home"
+        images={teachingGalleryImages.slice(0, 8)}
+        intro="A glimpse of tutoring in action — physics, math, and programming with high school learners."
+      />
+    </div>
+    <SectionLink href="/teaching" label="View full teaching gallery" />
   </Section>
 
   <Section title="My Projects">

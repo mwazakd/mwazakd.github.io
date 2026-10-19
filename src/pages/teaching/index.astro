@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import TeachingSection from '../../components/TeachingSection.astro';
+import TeachingGallery from '../../components/TeachingGallery.astro';
+---
+
+<BaseLayout
+  title="Teaching"
+  description="STEM tutoring gallery — physics, mathematics, and programming mentoring for Zimbabwean students."
+>
+  <Section title="Teaching & Mentoring">
+    <TeachingSection />
+  </Section>
+
+  <Section title="Teaching Gallery" id="gallery">
+    <TeachingGallery />
+  </Section>
+</BaseLayout>
